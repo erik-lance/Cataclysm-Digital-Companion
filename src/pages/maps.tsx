@@ -1,4 +1,4 @@
-import { Box, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
+import { Box, Button, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
 import map_data from '../data/map_data.json';
 
 export default function Maps() {
@@ -32,6 +32,22 @@ export default function Maps() {
                         </Grid>
                     ))}
                 </Grid>
+
+                {/* Button to return home bottom center */}
+                <Box
+                    display="flex"
+                    justifyContent="center"
+                    mt={3}
+                >
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        href="/"
+                    >
+                        Return
+                    </Button>
+                </Box>
+                
             </Box>
         </Container>
     </>

@@ -18,8 +18,8 @@ const theme = createTheme({
             disabled: "#3d253b",
         },
         background: {
-            default: "#25131a",
-            paper: "#e6deca",
+            default: "#523b40",
+            paper: "#bf704d",
 
         },
         

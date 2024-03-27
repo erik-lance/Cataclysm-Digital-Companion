@@ -1,5 +1,6 @@
 import { Box, Button, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
 import map_data from '../data/map_data.json';
+import { random_select } from '../utils/randomizer';
 
 export default function Maps() {
     return <>
@@ -31,6 +32,49 @@ export default function Maps() {
                             </Card>
                         </Grid>
                     ))}
+
+                    {/* There are two more maps */}
+                    {/* One is for randomized objects */}
+                    {/* One is for random select */}
+
+                    <Grid item md={1}>
+                        <Card>
+                            <CardActionArea
+                                href="/map/random"
+                            >
+                                <CardMedia
+                                    component="img"
+                                    image="maps/question.png"
+                                    alt="Randomized Objects" />
+                                
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5">
+                                        Randomized Objects
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea>
+                            
+                        </Card>
+                    </Grid>
+
+                    <Grid item md={1}>
+                        <Card>
+                            <CardActionArea
+                                href={`/map/${random_select()}`}
+                            >
+                                <CardMedia
+                                    component="img"
+                                    image="maps/question.png"
+                                    alt="Random Select" />
+                                
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5">
+                                        Random Select
+                                    </Typography>
+                                </CardContent>
+                            </CardActionArea> 
+                        </Card>
+                    </Grid>
                 </Grid>
 
                 {/* Button to return home bottom center */}

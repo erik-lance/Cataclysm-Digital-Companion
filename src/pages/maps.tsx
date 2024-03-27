@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
+import { Box, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
 import map_data from '../data/map_data.json';
 
 export default function Maps() {
@@ -13,16 +13,21 @@ export default function Maps() {
                     {map_data.map((map, index) => (
                         <Grid item md={1} key={index}>
                             <Card>
-                                <CardMedia
-                                    component="img"
-                                    image="maps/question.png"
-                                    alt={map.name} />
+                                <CardActionArea
+                                    href={`/map/${map.id}`}
+                                >
+                                    <CardMedia
+                                        component="img"
+                                        image="maps/question.png"
+                                        alt={map.name} />
+                                    
+                                    <CardContent>
+                                        <Typography gutterBottom variant="h5">
+                                            {map.name}
+                                        </Typography>
+                                    </CardContent>
+                                </CardActionArea>
                                 
-                                <CardContent>
-                                    <Typography gutterBottom variant="h5">
-                                        {map.name}
-                                    </Typography>
-                                </CardContent>
                             </Card>
                         </Grid>
                     ))}

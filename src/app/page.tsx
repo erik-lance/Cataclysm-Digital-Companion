@@ -9,7 +9,7 @@ export default function Home() {
         <Stack
           spacing={2}
         >
-          <Button variant="contained">Start Game</Button>
+          <Button variant="contained" href="/maps">Start Game</Button>
           <Button variant="contained">Glossary</Button>
         </Stack>
       </Box>

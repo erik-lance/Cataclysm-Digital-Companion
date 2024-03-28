@@ -3,9 +3,15 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Box>
-        <Typography variant="h1">Cataclysm</Typography>
+    <main className="flex flex-col items-center justify-between h-screen">
+      <Box
+        className="my-auto"
+      >
+        <Typography variant="h1"
+          sx={{ fontSize: "3rem" }}
+        >
+          Cataclysm
+        </Typography>
         <Stack
           spacing={2}
         >

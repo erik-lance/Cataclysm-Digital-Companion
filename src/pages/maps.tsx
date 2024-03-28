@@ -4,15 +4,34 @@ import { random_select } from '../utils/randomizer';
 
 export default function Maps() {
     return <>
-        <Container
-            maxWidth="lg"
+        <Grid container
+            direction="column"
+            justifyContent="center"
+            alignItems="center"
+            p={3}
         >
-            <Box
-                p={12}
+            <Grid item
+                lg
             >
-                <Grid container spacing={3} columns={3}>
+                <Typography
+                    variant="h3"
+                    align="center"
+                    gutterBottom
+                >
+                        Map Selection Screen
+                </Typography>
+            </Grid>
+
+            <Grid item container direction="row"
+                columns={20} justifyContent="center" alignItems="center"
+            >
+                <Grid item lg={4} md={3} sm={1} xs={1}> {/* Spacing */} </Grid>
+
+                <Grid item lg={6} md={6} sm={10} xs={10} 
+                    container columns={12} spacing={2}
+                >
                     {map_data.map((map, index) => (
-                        <Grid item md={1} key={index}>
+                        <Grid item xs={6} sm={6} md={4} key={index}>
                             <Card>
                                 <CardActionArea
                                     href={`/map/${map.id}`}
@@ -20,10 +39,13 @@ export default function Maps() {
                                     <CardMedia
                                         component="img"
                                         image="maps/question.png"
-                                        alt={map.name} />
+                                        alt={map.name} 
+                                    />
                                     
                                     <CardContent>
-                                        <Typography gutterBottom variant="h5">
+                                        <Typography gutterBottom
+                                            sx={{ typography: { sm: 'h6', md: 'h5' } }}
+                                        >
                                             {map.name}
                                         </Typography>
                                     </CardContent>
@@ -37,7 +59,7 @@ export default function Maps() {
                     {/* One is for randomized objects */}
                     {/* One is for random select */}
 
-                    <Grid item md={1}>
+                    <Grid item xs={6} sm={6} md={4} key={map_data.length}>
                         <Card>
                             <CardActionArea
                                 href="/map/random"
@@ -48,7 +70,9 @@ export default function Maps() {
                                     alt="Randomized Objects" />
                                 
                                 <CardContent>
-                                    <Typography gutterBottom variant="h5">
+                                    <Typography gutterBottom
+                                        sx={{ typography: { sm: 'h6', md: 'h5' } }}
+                                    >
                                         Randomized Objects
                                     </Typography>
                                 </CardContent>
@@ -57,7 +81,7 @@ export default function Maps() {
                         </Card>
                     </Grid>
 
-                    <Grid item md={1}>
+                    <Grid item xs={6} sm={6} md={4} key={map_data.length + 1}>
                         <Card>
                             <CardActionArea
                                 href={`/map/${random_select()}`}
@@ -68,7 +92,9 @@ export default function Maps() {
                                     alt="Random Select" />
                                 
                                 <CardContent>
-                                    <Typography gutterBottom variant="h5">
+                                    <Typography gutterBottom
+                                        sx={{ typography: { sm: 'h6', md: 'h5' } }}
+                                    >
                                         Random Select
                                     </Typography>
                                 </CardContent>
@@ -76,8 +102,14 @@ export default function Maps() {
                         </Card>
                     </Grid>
                 </Grid>
+                
+                <Grid item lg={4} md={3} sm={1} xs={1}> {/* Spacing */} </Grid>
+            </Grid>
 
-                {/* Button to return home bottom center */}
+            
+
+            {/* Button to return home bottom center */}
+            <Grid item sm>
                 <Box
                     display="flex"
                     justifyContent="center"
@@ -91,8 +123,8 @@ export default function Maps() {
                         Return
                     </Button>
                 </Box>
-                
-            </Box>
-        </Container>
+            </Grid>
+            
+        </Grid>
     </>
 }

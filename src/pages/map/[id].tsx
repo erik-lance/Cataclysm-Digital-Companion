@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
+import { Avatar, Box, Button, Card, CardActionArea, CardContent, CardMedia, Chip, Container, Divider, Grid, List, ListItem, ListItemAvatar, ListItemText, Stack, Typography } from '@mui/material';
 import map_data from '../../data/map_data.json';
 import { useRouter } from 'next/router';
 import { MapData } from '@/utils/randomizer';
@@ -23,10 +23,25 @@ export default function Map() {
     const mapNum:number = parseInt(id as string);
 
     const [selectedMap, setSelectedMap] = useState<MapData | null>(null);
+    const [numObstacles, setNumObstacles] = useState<number>(0);
+    const [numWalls, setNumWalls] = useState<number>(0);
 
     useEffect(() => {
         if (mapNum >= 0 && mapNum < map_data.length) {
             setSelectedMap(map_data[mapNum]);
+            let obstacles = 0;
+            let walls = 0;
+            map_data[mapNum].tiles.forEach(row => {
+                row.forEach(tile => {
+                    if (tile === 1) {
+                        obstacles++;
+                    } else if (tile === 2) {
+                        walls++;
+                    }
+                });
+            });
+            setNumObstacles(obstacles);
+            setNumWalls(walls);
         }
     }, [mapNum]);
 
@@ -57,6 +72,46 @@ export default function Map() {
                         ))
                     ))}
                 </Grid>
+
+                {/* Display map name and number of obstacles and walls to place */}
+                <Box
+                    display="flex"
+                    justifyContent={"space-evenly"}
+                    alignItems={"center"}
+                    margin={"auto"}
+                    mt={3}
+                    bgcolor="background.default"
+                    sx={{ borderRadius: 2 }}
+                    p={2}
+                >
+                    <Stack>
+                        <Typography variant="h5"> {selectedMap?.name} </Typography>
+                        <Chip label={`Map #${mapNum}`} />
+                    </Stack>
+                    
+                    <Box
+                        bgcolor={"secondary.main"}
+                        sx={{ borderRadius: 2 }}
+                        p={2}
+                    >
+                        <List>
+                            <ListItem>
+                                <ListItemAvatar>
+                                    <Avatar variant='square' src="/tiles/crate.png" />
+                                </ListItemAvatar>
+                                <ListItemText primary={`Obstacles: ${numObstacles}`} />
+                            </ListItem>
+                            <Divider />
+                            <ListItem>
+                                <ListItemAvatar>
+                                    <Avatar variant='square' src="/tiles/wall.png" />
+                                </ListItemAvatar>
+                                <ListItemText primary={`Walls: ${numWalls}`} />
+                            </ListItem>
+                        </List> 
+                    </Box>
+                    
+                </Box>
 
                 <Box
                     display="flex"

@@ -1,10 +1,35 @@
 import { Box, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
 import map_data from '../../data/map_data.json';
 import { useRouter } from 'next/router';
+import { MapData } from '@/utils/randomizer';
+import { useEffect, useState } from 'react';
+
+function tile_translator(value: number): string {
+    switch (value) {
+        case 0:
+            return "floor";
+        case 1:
+            return "crate";
+        case 2:
+            return "wall";
+        default:
+            return "unknown";
+    }
+}
 
 export default function Map() {
     const router = useRouter();
     const { id } = router.query;
+    const mapNum:number = parseInt(id as string);
+
+    const [selectedMap, setSelectedMap] = useState<MapData | null>(null);
+
+    useEffect(() => {
+        if (mapNum >= 0 && mapNum < map_data.length) {
+            setSelectedMap(map_data[mapNum]);
+        }
+    }, [mapNum]);
+
     return <>
         <Container
             maxWidth="lg"
@@ -12,6 +37,26 @@ export default function Map() {
             <Box
                 p={12}
             >
+                {/* A Grid of 9x9 filled based on map_data tile */}
+                {/* Grab the "tile" int and provide tile based on value */}
+                {/* (0 - floor, 1- crate, 2 - wall) */}
+                <Grid container spacing={2} columns={9}>
+                    {/* If selectedMap is null, don't print */}
+                    {selectedMap && selectedMap.tiles.map((row, rowIndex) => (
+                        row.map((tile, tileIndex) => (
+                            <Grid item md={1} key={rowIndex * 9 + tileIndex}>
+                                <Card>
+                                    <CardActionArea>
+                                        <CardMedia
+                                            component="img"
+                                            image={`/tiles/${tile_translator(tile)}.png`}
+                                            alt={tile_translator(tile)} />
+                                    </CardActionArea>
+                                </Card>
+                            </Grid>
+                        ))
+                    ))}
+                </Grid>
             </Box>
         </Container>
     </>

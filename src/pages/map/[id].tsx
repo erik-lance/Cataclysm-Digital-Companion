@@ -1,4 +1,4 @@
-import { Box, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
+import { Box, Button, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
 import map_data from '../../data/map_data.json';
 import { useRouter } from 'next/router';
 import { MapData } from '@/utils/randomizer';
@@ -57,6 +57,29 @@ export default function Map() {
                         ))
                     ))}
                 </Grid>
+
+                <Box
+                    display="flex"
+                    justifyContent="center"
+                    mt={3}
+                    gap={2}
+                >
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        href="/maps"
+                    >
+                        Return
+                    </Button>
+
+                    <Button
+                        variant="contained"
+                        color="success"
+                        href="/game"
+                        >
+                        Begin
+                    </Button>
+                </Box>
             </Box>
         </Container>
     </>

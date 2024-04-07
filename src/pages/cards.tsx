@@ -18,7 +18,7 @@ export default function Cards() {
 
                 <Grid item lg={8} md={10} sm={10} xs={10} container spacing={3}>
                     {move_cards.map((card, index) => (
-                        <Grid item key={index} xs={6} sm={4} md={3} lg={3}>
+                        <Grid item key={index} xs={6} sm={4} md={3} lg={2}>
                             <Card>
                                 <CardActionArea href={`/card/${card.id}`}>
                                     <CardMedia component="img" image="cards/question.png" alt={card.name} />         
@@ -40,7 +40,7 @@ export default function Cards() {
                 <Grid item lg={2} md={1} sm={1} xs={1}> {/* Spacing */} </Grid>
                 <Grid item lg={8} md={10} sm={10} xs={10} container spacing={3}>
                     {action_cards.map((card, index) => (
-                        <Grid item key={index} xs={6} sm={4} md={3} lg={3}>
+                        <Grid item key={index} xs={6} sm={4} md={3} lg={2}>
                             <Card>
                                 <CardActionArea href={`/card/${card.id}`}>
                                     <CardMedia component="img" image="cards/question.png" alt={card.name} />
@@ -63,7 +63,7 @@ export default function Cards() {
 
                 <Grid item lg={8} md={10} sm={10} xs={10} container spacing={3}>
                     {powerup_cards.map((card, index) => (
-                        <Grid item key={index} xs={6} sm={4} md={3} lg={3}>
+                        <Grid item key={index} xs={6} sm={4} md={3} lg={2}>
                             <Card>
                                 <CardActionArea href={`/card/${card.id}`}>
                                     <CardMedia component="img" image="cards/question.png" alt={card.name} />

@@ -16,7 +16,7 @@ export default function Home() {
           spacing={2}
         >
           <Button variant="contained" href="/maps">Start Game</Button>
-          <Button variant="contained">Glossary</Button>
+          <Button variant="contained" href="/cards">Glossary</Button>
         </Stack>
       </Box>
     </main>

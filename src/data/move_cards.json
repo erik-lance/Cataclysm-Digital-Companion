@@ -1,0 +1,56 @@
+[
+    {
+        "id": 0,
+        "name": "CATWALK",
+        "image": "catwalk.png",
+        "description": "Move 1 tile",
+        "type": "Move",
+        "numCopies": 8,  
+        "detailed": "Moves 1 tile either horizontally or vertically. Has to move unless blocked in all directions."
+    },
+    {
+        "id": 1,
+        "name": "CATRUN",
+        "image": "catrun.png",
+        "description": "Move 2 tiles or less",
+        "type": "Move",
+        "numCopies": 4,  
+        "detailed": "Moves 2 tiles or less either horizontally or vertically. Has to move unless blocked in all directions."
+    },
+    {
+        "id": 2,
+        "name": "CATLEAP",
+        "image": "catleap.png",
+        "description": "Move 3 tiles or less",
+        "type": "Move",
+        "numCopies": 4,  
+        "detailed": "Moves 3 tiles or less either horizontally or vertically. Has to move unless blocked in all directions."
+    },
+    {
+        "id": 3,
+        "name": "CATMOBILE",
+        "image": "catmobile.png",
+        "description": "Move 4 tiles or less",
+        "type": "Move",
+        "numCopies": 4,  
+        "detailed": "Moves 4 tiles or less either horizontally or vertically. Has to move unless blocked in all directions."
+    },
+    {
+        "id": 4,
+        "name": "BRISK WALK",
+        "image": "brisk_walk.png",
+        "description": "Move 2 tiles or less and take priority for the next action only.",
+        "type": "Move",
+        "numCopies": 4,  
+        "detailed": "Moves 2 tiles or less either horizontally or vertically. Has to move unless blocked in all directions. Player goes first during the next set of actions only."
+    },
+    {
+        "id": 5,
+        "name": "QUICKSTEP",
+        "image": "quickstep.png",
+        "description": "Move 1 tile. This card can be inserted and played as a 4th action any time at any action order.",
+        "type": "Move",
+        "numCopies": 2,  
+        "detailed": "Moves 1 tile either horizontally or vertically. Has to move unless blocked in all directions. This card can be played instantly as a 4th action at any time or at any action order."
+    }
+]

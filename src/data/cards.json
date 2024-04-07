@@ -1,0 +1,335 @@
+[
+    {
+        "id": 0,
+        "name": "CATWALK",
+        "image": "catwalk.png",
+        "description": "Move 1 tile",
+        "type": "Move",
+        "numCopies": 8,  
+        "detailed": "Moves 1 tile either horizontally or vertically. Has to move unless blocked in all directions."
+    },
+    {
+        "id": 1,
+        "name": "CATRUN",
+        "image": "catrun.png",
+        "description": "Move 2 tiles or less",
+        "type": "Move",
+        "numCopies": 4,  
+        "detailed": "Moves 2 tiles or less either horizontally or vertically. Has to move unless blocked in all directions."
+    },
+    {
+        "id": 2,
+        "name": "CATLEAP",
+        "image": "catleap.png",
+        "description": "Move 3 tiles or less",
+        "type": "Move",
+        "numCopies": 4,  
+        "detailed": "Moves 3 tiles or less either horizontally or vertically. Has to move unless blocked in all directions."
+    },
+    {
+        "id": 3,
+        "name": "CATMOBILE",
+        "image": "catmobile.png",
+        "description": "Move 4 tiles or less",
+        "type": "Move",
+        "numCopies": 4,  
+        "detailed": "Moves 4 tiles or less either horizontally or vertically. Has to move unless blocked in all directions."
+    },
+    {
+        "id": 4,
+        "name": "BRISK WALK",
+        "image": "brisk_walk.png",
+        "description": "Move 2 tiles or less and take priority for the next action only.",
+        "type": "Move",
+        "numCopies": 4,  
+        "detailed": "Moves 2 tiles or less either horizontally or vertically. Has to move unless blocked in all directions. Player goes first during the next set of actions only."
+    },
+    {
+        "id": 5,
+        "name": "QUICKSTEP",
+        "image": "quickstep.png",
+        "description": "Move 1 tile. This card can be inserted and played as a 4th action any time at any action order.",
+        "type": "Move",
+        "numCopies": 2,  
+        "detailed": "Moves 1 tile either horizontally or vertically. Has to move unless blocked in all directions. This card can be played instantly as a 4th action at any time or at any action order."
+    },
+    {
+        "id": 6,
+        "name": "HOT FURBALL",
+        "image": "hot_furball.png",
+        "description": "Hit the first target player in a horizontal, vertical, diagonal direction from you.",
+        "type": "Action",
+        "numCopies": 6,  
+        "detailed": ""
+    },
+    {
+        "id": 7,
+        "name": "STATIC BOLT",
+        "image": "static_bolt.png",
+        "description": "Deal 3 dmg to all players in a diagonal line one direction from you.",
+        "type": "Action",
+        "numCopies": 4,  
+        "detailed": ""
+    },
+    {
+        "id": 8,
+        "name": "KATRATE",
+        "image": "katrate.png",
+        "description": "Deal 4 dmg to all players in a 1 tile radius around you.",
+        "type": "Action",
+        "numCopies": 2,  
+        "detailed": ""
+    },
+    {
+        "id": 9,
+        "name": "THUMBTACKS",
+        "image": "thumbtacks.png",
+        "description": "Deal 1 dmg per tile moved, to all players including yourself after this action is revealed.",
+        "type": "Action",
+        "numCopies": 2,  
+        "detailed": ""
+    },
+    {
+        "id": 10,
+        "name": "CATACLYSM",
+        "image": "cataclysm.png",
+        "description": "On Action 3 of next turn, deal 3 dmg to all enemies that are not within a 4 tile radius of you.",
+        "type": "Action",
+        "numCopies": 2,  
+        "detailed": ""
+    },
+    {
+        "id": 11,
+        "name": "CATLING GUN",
+        "image": "catling_gun.png",
+        "description": "Shoot in all horizontal and vertical directions and deal 2 dmg to all enemies in the literal crossfire.",
+        "type": "Action",
+        "numCopies": 2,  
+        "detailed": ""
+    },
+    {
+        "id": 12,
+        "name": "CATOMIC BOMB",
+        "image": "catomic_bomb.png",
+        "description": "Mark a single tile anywhere on the board. By the end of next turn, deal 3 dmg in a 2 tile radius from the marked tile to All players including yourself.",
+        "type": "Action",
+        "numCopies": 2,  
+        "detailed": "Mark a single tile: a tile on the board will be targeted. Place a marker tile.\nEnd of next turn: card takes effect after the last played card in the next cycle\nRadius 2: any players within a 2 tile range will be affected once activated. (count 2 tiles in all directions including diagonally)."
+    },
+    {
+        "id": 13,
+        "name": "DEATH STARE",
+        "image": "death_stare.png",
+        "description": "Deal 1 dmg to a single enemy in a 4 tile radius around you.",
+        "type": "Action",
+        "numCopies": 4,  
+        "detailed": ""
+    },
+    {
+        "id": 14,
+        "name": "THE CLAW",
+        "image": "the_claw.png",
+        "description": "Deal 2 dmg to a single target in a horizontal, vertical, diagonal line that is 3 tiles from you.",
+        "type": "Action",
+        "numCopies": 2,  
+        "detailed": ""
+    },
+    {
+        "id": 15,
+        "name": "THE DISINTEGRATOR",
+        "image": "the_disintegrator.png",
+        "description": "Target a single row or column beside you and deal 3 dmg to all enemies there.",
+        "type": "Action",
+        "numCopies": 2,  
+        "detailed": ""
+    },
+    {
+        "id": 16,
+        "name": "CAT JAB",
+        "image": "cat_jab.png",
+        "description": "Deal 2 dmg to a player in a 2 tile radius around you with 5 lives or more. Otherwise, deal 1 dmg.",
+        "type": "Action",
+        "numCopies": 2,  
+        "detailed": ""
+    },
+    {
+        "id": 17,
+        "name": "CAT HAYMAKER",
+        "image": "cat_haymaker.png",
+        "description": "Deal 1 dmg multiplied by the action order that you played this card. Hit a single target in a 2 tile radius around you.",
+        "type": "Action",
+        "numCopies": 2,  
+        "detailed": ""
+    },
+    {
+        "id": 18,
+        "name": "KATMIKAZE",
+        "image": "katmikaze.png",
+        "description": "Halve the lives (upper bound) of all players in a 1 tile radius around you including yourself. Skip an action to discard this card",
+        "type": "Action",
+        "numCopies": 1,  
+        "detailed": ""
+    },
+    {
+        "id": 19,
+        "name": "STEROIDS",
+        "image": "steroids.png",
+        "description": "Add 2 to your next action.",
+        "type": "Action",
+        "numCopies": 4,  
+        "detailed": ""
+    },
+    {
+        "id": 20,
+        "name": "LAZY ROLL",
+        "image": "lazy_roll.png",
+        "description": "Dodge all targeted cards for this action only.",
+        "type": "Action",
+        "numCopies": 6,  
+        "detailed": ""
+    },
+    {
+        "id": 21,
+        "name": "TELEPORTATION",
+        "image": "teleportation.png",
+        "description": "Can only be played on action 3. Pick any unoccupied tile and transfer there. This does not count as moving.",
+        "type": "Action",
+        "numCopies": 2,  
+        "detailed": ""
+    },
+    {
+        "id": 22,
+        "name": "TENTH LIFE",
+        "image": "tenth_life.png",
+        "description": "If you were supposed to die this turn, don’t. Activated even when unrevealed.",
+        "type": "Action",
+        "numCopies": 2,  
+        "detailed": ""
+    },
+    {
+        "id": 23,
+        "name": "CATJUTSU",
+        "image": "catjutsu.png",
+        "description": "Swap positions with a target player. Does not count as moving.",
+        "type": "Action",
+        "numCopies": 2,  
+        "detailed": ""
+    },
+    {
+        "id": 24,
+        "name": "SAIYAN CAT",
+        "image": "saiyan_cat.png",
+        "description": "Trigger your next action twice.",
+        "type": "Action",
+        "numCopies": 2,  
+        "detailed": ""
+    },
+    {
+        "id": 25,
+        "name": "FEEDING TIME",
+        "image": "feeding_time.png",
+        "description": "Negate All Move cards after this action is played for this turn only.",
+        "type": "Action",
+        "numCopies": 2,  
+        "detailed": ""
+    },
+    {
+        "id": 26,
+        "name": "REFLECTION",
+        "image": "reflection.png",
+        "description": "Reflect all dmg you took this action to the players who played them.",
+        "type": "Action",
+        "numCopies": 4,  
+        "detailed": ""
+    },
+    {
+        "id": 27,
+        "name": "NOTHING",
+        "image": "nothing.png",
+        "description": "Do nothing this turn you lazy cat.",
+        "type": "Action",
+        "numCopies":2 ,  
+        "detailed": ""
+    },
+    {
+        "id": 28,
+        "name": "SCAREDY CAT",
+        "image": "scaredy_cat.png",
+        "description": "You are unable to deal dmg or receive dmg for the rest of the turn.",
+        "type": "Action",
+        "numCopies": 2,  
+        "detailed": ""
+    },
+    {
+        "id": 29,
+        "name": "GROWL",
+        "image": "growl.png",
+        "description": "A target player does not play their Action3 this turn.",
+        "type": "Action",
+        "numCopies": 3,  
+        "detailed": ""
+    },
+    {
+        "id": 30,
+        "name": "CAT LEASH",
+        "image": "cat_leash.png",
+        "description": "Move a target player 2 tiles or less.",
+        "type": "Action",
+        "numCopies": 1,  
+        "detailed": ""
+    },
+    {
+        "id": 31,
+        "name": "COPYCAT",
+        "image": "copycat.png",
+        "description": "Select an action already played this turn by an enemy, copy that action.",
+        "type": "Powerup",
+        "numCopies": 1,  
+        "detailed": ""
+    },
+    {
+        "id": 32,
+        "name": "SNIPURR",
+        "image": "snipurr.png",
+        "description": "In a horizontal or vertical direction, deal dmg to a target enemy leaving them with only 1 life.",
+        "type": "Powerup",
+        "numCopies": 1,  
+        "detailed": ""
+    },
+    {
+        "id": 33,
+        "name": "LULLABY",
+        "image": "lullaby.png",
+        "description": "All other players take 1 less action next turn.",
+        "type": "Powerup",
+        "numCopies": 1,  
+        "detailed": ""
+    },
+    {
+        "id": 34,
+        "name": "PLATEMAIL",
+        "image": "platemail.png",
+        "description": "Be immune to dmg for the entire turn.",
+        "type": "Powerup",
+        "numCopies": 1,  
+        "detailed": ""
+    },
+    {
+        "id": 35,
+        "name": "HEAT-SEEKING HEAT",
+        "image": "heat_seeking_heat.png",
+        "description": "Deal 1 dmg to the nearest player to you. Deal dmg to all in a tie.",
+        "type": "Powerup",
+        "numCopies": 1,  
+        "detailed": ""
+    },
+    {
+        "id": 36,
+        "name": "INVESTMENT",
+        "image": "investment.png",
+        "description": "When this action is revealed, replace it with an action from hand and play it.",
+        "type": "Powerup",
+        "numCopies": 1,  
+        "detailed": ""
+    }   
+]

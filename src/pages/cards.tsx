@@ -1,9 +1,12 @@
 import { Box, Button, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography } from '@mui/material';
-import move_cards from '../data/move_cards.json';
-import action_cards from '../data/action_cards.json';
-import powerup_cards from '../data/powerup_cards.json';
+import card_data from '../data/card_data.json';
 
-export default function Cards() {
+export default function GameCards() {
+
+    const move_cards = card_data.filter(card => card.type === 'Move');
+    const action_cards = card_data.filter(card => card.type === 'Action');
+    const powerup_cards = card_data.filter(card => card.type === 'Powerup');
+
     return <>
         <Grid container direction="column" justifyContent="center" alignItems="center" p={3}>
 

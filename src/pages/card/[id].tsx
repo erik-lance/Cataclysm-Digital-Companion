@@ -31,7 +31,7 @@ export default function GameCard() {
         <Grid container direction="column" justifyContent="center" alignItems="center" p={3}>
 
             <Grid item lg>
-                <Typography variant="h3" align="center" gutterBottom style={{ marginBottom: '50px' }} >
+                <Typography variant="h3" align="center" gutterBottom style={{ marginBottom: '50px' }} fontWeight="bold">
                         {selectedCard?.name}
                 </Typography>
             </Grid>
@@ -44,7 +44,7 @@ export default function GameCard() {
                         <Card>
                             <CardMedia
                                 component="img"
-                                image="../cards/question.png"
+                                image={`../cards/${selectedCard?.image}`}
                                 alt="Image"
                                 style={{ minWidth: '100%', height: imageHeight }} 
                             />

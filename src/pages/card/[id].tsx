@@ -41,7 +41,7 @@ export default function GameCard() {
 
                 <Grid item lg={8} md={10} sm={10} xs={10} container spacing={6}>
                     <Grid item xs={12} sm={6} container justifyContent="center">
-                        <Card>
+                        <Card sx={{ bgcolor: 'rgba(0, 0, 0, 0)' }}>
                             <CardMedia
                                 component="img"
                                 image={`../cards/${selectedCard?.image}`}
@@ -88,7 +88,7 @@ export default function GameCard() {
             </Grid>
 
             {/* Button to return home bottom center */}
-            <Grid item sm style={{ marginTop: '30px' }}>
+            <Grid item sm style={{ marginTop: '30px'}}>
                 <Box display="flex" justifyContent="center" mt={3}>
                     <Button variant="contained" color="primary" href="/cards" size="large">
                         Return

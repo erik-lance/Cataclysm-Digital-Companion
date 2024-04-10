@@ -34,7 +34,7 @@ export default function GameCards() {
             </Grid>
 
             <Grid item lg>
-                <Typography variant="h3" align="center" gutterBottom style={{ marginTop: '50px' }} fontWeight="bold">
+                <Typography variant="h3" align="center" gutterBottom style={{ marginTop: '60px' }} fontWeight="bold">
                         Action Cards
                 </Typography>
             </Grid>
@@ -56,7 +56,7 @@ export default function GameCards() {
             </Grid>
 
             <Grid item lg>
-                <Typography variant="h3" align="center" gutterBottom style={{ marginTop: '50px' }} fontWeight="bold">
+                <Typography variant="h3" align="center" gutterBottom style={{ marginTop: '60px' }} fontWeight="bold">
                         Powerup Cards
                 </Typography>
             </Grid>

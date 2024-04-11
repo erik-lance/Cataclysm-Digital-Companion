@@ -18,14 +18,10 @@ export default function GameCard() {
     const { id } = router.query;
     const cardNum:number = parseInt(id as string);
     const [selectedCard, setSelectedCard] = useState<CardData | null>(null);
-    const isLargeScreen = useMediaQuery('(min-width: 960px)');
 
     useEffect(() => {
         setSelectedCard(card_data[cardNum]);
     }, [cardNum]);
-
-    // Calculate image height based on screen size
-    const imageHeight = isLargeScreen ? 600 : 300;
 
     return (
         <Grid container direction="column" justifyContent="center" alignItems="center" p={3}>
@@ -46,7 +42,6 @@ export default function GameCard() {
                                 component="img"
                                 image={`../cards/${selectedCard?.image}`}
                                 alt="Image"
-                                style={{ minWidth: '100%', height: imageHeight }} 
                             />
                         </Card>
                     </Grid>

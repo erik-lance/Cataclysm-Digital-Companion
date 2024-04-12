@@ -95,10 +95,10 @@ export default function Game() {
           Game
         </Typography>
         <Typography variant="h5" align="center" gutterBottom style={{ marginBottom: '30px' }}>
-          <span style={{ fontWeight: 'bold' }}>Timer:</span> {formatTime(timer)}
+          Timer: {formatTime(timer)}
         </Typography>
         <Typography variant="h5" align="center" gutterBottom style={{ marginBottom: '30px' }}>
-          <span style={{ fontWeight: 'bold' }}>Cycle Count:</span> {cycleCount}
+          Cycle Count: {cycleCount}
         </Typography>
       </Grid>
 
@@ -127,7 +127,7 @@ export default function Game() {
                 </Grid>
                 {/*Avatar Name*/}
                 <Grid item>
-                  <Typography variant="subtitle1" align="center" fontWeight='bold'>
+                  <Typography variant="subtitle1" align="center" fontWeight='bold' fontSize='1.1em'>
                     {avatar.name}
                   </Typography>
                 </Grid>

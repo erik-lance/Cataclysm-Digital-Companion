@@ -169,9 +169,6 @@ export default function Game() {
       p={3}
     >
       <Grid item container direction="column" alignItems="center" spacing={2}> {/* Title, Counter, and Timer */}
-        <Typography variant="h3" align="center" gutterBottom fontWeight="bold" style={{ marginBottom: '30px' }}>
-          Game
-        </Typography>
         <Typography variant="h5" align="center" gutterBottom style={{ marginBottom: '30px' }}>
           Timer: {formatTime(timer)}
         </Typography>

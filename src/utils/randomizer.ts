@@ -1,4 +1,5 @@
 import map_data from '../data/map_data.json';
+import { v4 as uuidv4 } from 'uuid';
 
 export interface MapData {
     id: number;
@@ -36,8 +37,8 @@ export function randomizeMapData(): MapData {
     }
 
     const randomMap: MapData = {
-        id: map_data.length,
-        name: "Random Map",
+        id: Number(uuidv4()),
+        name: "Randomly Generated Map",
         tiles: tiles
     };
 

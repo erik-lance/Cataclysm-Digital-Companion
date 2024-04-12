@@ -32,7 +32,7 @@ export default function Maps() {
                     container columns={12} spacing={2}
                 >
                     {map_data.map((map, index) => (
-                        <Grid item xs={6} sm={6} md={4} key={index}>
+                        <Grid item xs={6} sm={6} md={6} key={index}>
                             <MapCard
                                 id={map.id}
                                 name={map.name}
@@ -48,7 +48,7 @@ export default function Maps() {
 
                     
 
-                    <Grid item xs={6} sm={6} md={4} key={map_data.length}>
+                    <Grid item xs={6} sm={6} md={6} key={map_data.length}>
                         <MapCard
                             id={map_data.length}
                             name={"Randomized Objects"}
@@ -57,7 +57,7 @@ export default function Maps() {
                         />
                     </Grid>
 
-                    <Grid item xs={6} sm={6} md={4} key={map_data.length + 1}>
+                    <Grid item xs={6} sm={6} md={6} key={map_data.length + 1}>
                         <MapCard
                             id={map_data.length + 1}
                             name={"Random Select"}

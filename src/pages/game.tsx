@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Slider, Grid, IconButton, Typography, Avatar, Dialog, DialogTitle, DialogContent, DialogActions, Button, Stack } from '@mui/material';
+import { Slider, Grid, IconButton, Typography, Avatar, Dialog, DialogTitle, DialogContent, DialogActions, Button, Stack, Paper } from '@mui/material';
 import { ArrowLeft, ArrowRight } from '@mui/icons-material';
 import Image from 'next/image';
 
@@ -10,11 +10,23 @@ interface AvatarData {
   value: number;
 }
 
+interface ModifierData {
+  id: number;
+  name: string;
+  description: string;
+  image: string; // URL of the modifier image
+}
+
 const initialAvatars: AvatarData[] = [
   { id: 1, name: 'Player 1', image: '/avatars/Avatar 1.png', value: 9 },
   { id: 2, name: 'Player 2', image: '/avatars/Avatar 2.png', value: 9 },
   { id: 3, name: 'Player 3', image: '/avatars/Avatar 3.png', value: 9 },
   { id: 4, name: 'Player 4', image: '/avatars/Avatar 4.png', value: 9 },
+];
+
+const modifiers: ModifierData[] = [
+  { id: 0, name: 'The Zoomies', description: 'All move cards get +2', image: '/events/Zoomies.png' },
+  { id: 1, name: 'Hardcore', description: 'Cats start with 5 lives instead of 9', image: '/events/Hardcore.png' },
 ];
 
 export default function Game() {
@@ -25,6 +37,7 @@ export default function Game() {
   const [showModifiersPrompt, setShowModifiersPrompt] = useState<boolean>(true);
   const [showModifiers, setShowModifiers] = useState(false);
   const [getMaxLives, setMaxLives] = useState(9);
+  const [getCurrentModifier, setCurrentModifier] = useState(-1);
 
   useEffect(() => {
     const zeroValueAvatars = avatars.filter(avatar => avatar.value === 0);
@@ -85,6 +98,7 @@ export default function Game() {
     }
 
     setShowModifiers(false);
+    setCurrentModifier(id);
   }
 
   return <>
@@ -102,17 +116,23 @@ export default function Game() {
     <Dialog open={showModifiers}>
       <DialogTitle>Game Modifiers</DialogTitle>
       <DialogContent>
-        <Typography>Choose a modifier:</Typography>
-        <Stack spacing={1} direction="column" justifyContent="center" alignItems="center">
+        <Typography>Choose a modifier</Typography>
+        
+        <Stack spacing={1} direction="column" alignItems="flex-start" justifyContent="center" mt={2}>
           {/* Adds image from /public as start icon */}
-          
-          <Button variant="contained" color="primary" onClick={() => activateModifier(0)} startIcon={<Image src="/events/TheZoomies.png" alt="The Zoomies" width={50} height={50} />}>
-          The Zoomies - All move cards get +2 
-          </Button>
+          {/* Makes button use full width of stack with text on the left */}
+          {modifiers.map(modifier => (
+            <Button
+              key={modifier.id}
+              variant="contained"
+              color="secondary"
+              startIcon={<Image src={modifier.image} alt={modifier.name} width={50} height={50} />}
+              onClick={() => activateModifier(modifier.id)}
 
-          <Button variant="contained" color="primary" onClick={() => activateModifier(1)} startIcon={<Image src="/events/Hardcore.png" alt="Hardcore" width={50} height={50} />}>
-            Hardcore - Cats start with 5 lives instead of 9.
-          </Button>
+            >
+              {modifier.name} - {modifier.description}
+            </Button>
+          ))}
         </Stack>
       </DialogContent>
       <DialogActions>
@@ -133,6 +153,30 @@ export default function Game() {
             Game
         </Typography>
       </Grid>
+
+      { getCurrentModifier !== -1 && (
+        <Grid item xl lg md sm xs> {/* Modifier (if any) */}
+          <Grid container alignItems="center">
+            <Paper elevation={3} style={{ padding: '10px' }}  sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap:2}}>
+              <Grid item>
+                <Avatar
+                  alt={modifiers[getCurrentModifier].name}
+                  src={modifiers[getCurrentModifier].image}
+                  sx={{ width: 75, height: 75 }} // Adjust size of the avatar
+                />
+              </Grid>
+              <Grid item>
+                <Typography variant="h6" align="left" gutterBottom>
+                  {modifiers[getCurrentModifier].name}
+                </Typography>
+                <Typography variant="body1" align="left" gutterBottom>
+                  {modifiers[getCurrentModifier].description}
+                </Typography>
+              </Grid>
+            </Paper>
+          </Grid>
+        </Grid>
+      )}
 
       <Grid item xl lg md sm xs> {/* Counter */}
         <Typography variant="h5" align="center" gutterBottom style={{ marginBottom: '30px' }} >

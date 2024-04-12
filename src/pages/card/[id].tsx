@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Typography, useMediaQuery } from '@mui/material';
+import { Box, Button, Card, CardActionArea, CardContent, CardMedia, Container, Grid, Stack, Typography, useMediaQuery } from '@mui/material';
 import card_data from '../../data/card_data.json';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
@@ -47,7 +47,7 @@ export default function GameCard() {
                     </Grid>
 
                     <Grid item xs={12} sm={6} container justifyContent="left">
-                        <Card sx={{ bgcolor: 'rgba(0, 0, 0, 0)' }}> 
+                        <Stack sx={{ bgcolor: 'rgba(0, 0, 0, 0)' }}> 
                             <CardContent>
 
                                 <Typography display="flex" alignItems="center" gutterBottom variant="h5" component="div" style={{ marginBottom: '20px' }}>
@@ -76,7 +76,7 @@ export default function GameCard() {
                                 </Typography>
                                 
                             </CardContent>
-                        </Card>
+                        </Stack>
                     </Grid>
                 </Grid>
                 <Grid item lg={2} md={1} sm={1} xs={1}> {/* Spacing */} </Grid>

@@ -1,5 +1,5 @@
 import { Avatar, Box, Button, Card, CardActionArea, CardContent, CardMedia, Chip, Container, Divider, Grid, List, ListItem, ListItemAvatar, ListItemText, Stack, Typography } from '@mui/material';
-import { MapData, randomizeMapData } from '@/utils/randomizer';
+import { MapData, randomizeMapData, get_crates_with_powerups } from '@/utils/randomizer';
 import { useEffect, useState } from 'react';
 
 function tile_translator(value: number): string {
@@ -10,6 +10,8 @@ function tile_translator(value: number): string {
             return "crate";
         case 2:
             return "wall";
+        case 9:
+            return "powerup";
         default:
             return "unknown";
     }
@@ -19,23 +21,28 @@ export default function Map() {
     const [selectedMap, setSelectedMap] = useState<MapData | null>(null);
     const [numObstacles, setNumObstacles] = useState<number>(0);
     const [numWalls, setNumWalls] = useState<number>(0);
+    const [numPowerups, setNumPowerups] = useState<number>(0);
 
     useEffect(() => {
         const randomMap = randomizeMapData();
-        setSelectedMap(randomMap);
+        setSelectedMap(get_crates_with_powerups(randomMap));
         let obstacles = 0;
         let walls = 0;
+        let powerups = 0;
         randomMap.tiles.forEach(row => {
             row.forEach(tile => {
                 if (tile === 1) {
                     obstacles++;
                 } else if (tile === 2) {
                     walls++;
+                } else if (tile === 9) {
+                    powerups++;
                 }
             });
         });
         setNumObstacles(obstacles);
         setNumWalls(walls);
+        setNumPowerups(powerups);
     }, []);
 
     return (
@@ -124,6 +131,14 @@ export default function Map() {
                 <Stack direction="row" spacing={1} alignItems="center">
                   <Avatar src="/tiles/wall.png" variant="square" />
                   <Typography variant="h6">x{numWalls} Walls</Typography>
+                </Stack>
+              </Grid>
+              <Grid item lg={1} md={1} sm={1} xs={2}>
+                <Stack direction="row" spacing={1} alignItems="center">
+                  <Avatar src="/tiles/powerup.png" variant="square" />
+                  <Typography variant="h6">
+                    x{numPowerups} Powerups
+                  </Typography>
                 </Stack>
               </Grid>
             </Grid>

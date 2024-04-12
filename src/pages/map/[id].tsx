@@ -164,7 +164,7 @@ export default function Map() {
                                     </Stack>
                                     <Stack direction="row" spacing={1} alignItems="center">
                                         <Avatar src="/tiles/powerup.png" variant="square" />
-                                        <Typography variant="h6">x{numPowerups} Powerups</Typography>
+                                        <Typography variant="h6">x{numPowerups} Obstacles with Powerups</Typography>
                                     </Stack>
                                 </Stack>
                             </Grid>

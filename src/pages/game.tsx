@@ -20,6 +20,7 @@ export default function Game() {
   const [avatars, setAvatars] = useState<AvatarData[]>(initialAvatars);
   const [showDialog, setShowDialog] = useState<boolean>(false);
   const [nonZeroAvatarNames, setNonZeroAvatarNames] = useState<string[]>([]);
+  const [cycleCount, setCycleCount] = useState(0);
 
   useEffect(() => {
     const zeroValueAvatars = avatars.filter(avatar => avatar.value === 0);
@@ -31,6 +32,10 @@ export default function Game() {
       setShowDialog(false);
     }
   }, [avatars]);
+
+  const handleNextCycle = () => {
+    setCycleCount(prevCount => prevCount + 1);
+  };  
 
   const handleSliderChange = (id: number, newValue: number) => {
     setAvatars(prevAvatars =>
@@ -66,22 +71,20 @@ export default function Game() {
       p={3}
     >
       <Grid item xl lg md sm xs> {/* Title */}
-                <Typography variant="h3" align="center" gutterBottom fontWeight="bold">
-                    Game
-                </Typography>
-            </Grid>
+        <Typography variant="h3" align="center" gutterBottom fontWeight="bold">
+            Game
+        </Typography>
+      </Grid>
 
-            <Grid item xl lg md sm xs> {/* Description */}
-                <Typography variant="h5" align="center" gutterBottom>
-                    This is the game page.
-                </Typography>
-            </Grid>
+      <Grid item xl lg md sm xs> {/* Counter */}
+        <Typography variant="h5" align="center" gutterBottom style={{ marginBottom: '30px' }} >
+            Cycle Count: {cycleCount}
+        </Typography>
+      </Grid>
 
-            <Grid item xl lg md sm xs> {/* Description */}
-                <Button variant="contained" color="primary">
-                    Next Cycle
-                </Button>
-            </Grid>
+      <Button variant="contained" color="primary" onClick={handleNextCycle} style={{ marginBottom: '20px' }} >
+        Next Cycle
+      </Button>
 
       {avatars.map(avatar => (
         <Grid item key={avatar.id}>

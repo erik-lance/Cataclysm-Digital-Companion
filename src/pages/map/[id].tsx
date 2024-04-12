@@ -27,6 +27,7 @@ export default function Map() {
     const [selectedMap, setSelectedMap] = useState<MapData | null>(null);
     const [numObstacles, setNumObstacles] = useState<number>(0);
     const [numWalls, setNumWalls] = useState<number>(0);
+    const [numPowerups, setNumPowerups] = useState<number>(0);
 
     useEffect(() => {
         if (mapNum >= 0 && mapNum < map_data.length) {
@@ -34,17 +35,21 @@ export default function Map() {
             setSelectedMap(get_crates_with_powerups(map_data[mapNum]));
             let obstacles = 0;
             let walls = 0;
+            let powerups = 0;
             map_data[mapNum].tiles.forEach(row => {
                 row.forEach(tile => {
                     if (tile === 1) {
                         obstacles++;
                     } else if (tile === 2) {
                         walls++;
+                    } else if (tile === 9) {
+                        powerups++;
                     }
                 });
             });
             setNumObstacles(obstacles);
             setNumWalls(walls);
+            setNumPowerups(powerups);
         }
     }, [mapNum]);
 
@@ -156,6 +161,10 @@ export default function Map() {
                                     <Stack direction="row" spacing={1} alignItems="center">
                                         <Avatar src="/tiles/wall.png" variant="square" />
                                         <Typography variant="h6">x{numWalls} Walls</Typography>
+                                    </Stack>
+                                    <Stack direction="row" spacing={1} alignItems="center">
+                                        <Avatar src="/tiles/powerup.png" variant="square" />
+                                        <Typography variant="h6">x{numPowerups} Powerups</Typography>
                                     </Stack>
                                 </Stack>
                             </Grid>

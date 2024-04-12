@@ -54,6 +54,7 @@ export default function Maps() {
                             name={"Randomized Objects"}
                             description={"Click to view randomized objects"}
                             href="/map/random"
+                            color="purple"
                         />
                     </Grid>
 
@@ -63,6 +64,7 @@ export default function Maps() {
                             name={"Random Select"}
                             description={"Click to view random select"}
                             href={`/map/${random_select()}`}
+                            color="green"
                         />
                     </Grid>
                 </Grid>

@@ -5,11 +5,17 @@ interface MapCardProps {
     name: string;
     description: string;
     href: string;
+    color?: string
 }
 
-export default function MapCard( { id, name, description, href }: MapCardProps ) {
+export default function MapCard( { id, name, description, href, color }: MapCardProps ) {
+    if (color === undefined) {
+        color = "background.paper"
+    }
     return (
-        <Card>
+        <Card
+            style={{ backgroundColor: color }}
+        >
             <CardActionArea
                 href={href}
             >

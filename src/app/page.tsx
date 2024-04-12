@@ -7,11 +7,13 @@ export default function Home() {
       <Box
         className="my-auto"
       >
-        <Typography variant="h1"
-          sx={{ fontSize: "3rem" }}
-        >
-          Cataclysm
-        </Typography>
+        {/* Logo expands width based on screen */}
+        <Box className="flex justify-center mb-12">
+        <Image src="/cataclysm_logo.png"  width={790} height={256}
+          style={{ width: "80%", height: "auto" }}
+          alt="Cataclysm Logo" />
+        </Box>
+        
         <Stack
           spacing={2}
         >

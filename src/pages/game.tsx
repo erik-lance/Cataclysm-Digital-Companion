@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Slider, Grid, IconButton, Typography, Avatar, Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@mui/material';
+import { Slider, Grid, IconButton, Typography, Avatar, Dialog, DialogTitle, DialogContent, DialogActions, Button, useMediaQuery } from '@mui/material';
 import { ArrowLeft, ArrowRight } from '@mui/icons-material';
 
 interface AvatarData {
@@ -10,10 +10,10 @@ interface AvatarData {
 }
 
 const initialAvatars: AvatarData[] = [
-  { id: 1, name: 'Player 1', image: '/avatars/Avatar 1.png', value: 9 },
-  { id: 2, name: 'Player 2', image: '/avatars/Avatar 2.png', value: 9 },
-  { id: 3, name: 'Player 3', image: '/avatars/Avatar 3.png', value: 9 },
-  { id: 4, name: 'Player 4', image: '/avatars/Avatar 4.png', value: 9 },
+  { id: 1, name: 'Slick', image: '/avatars/Avatar 1.png', value: 9 },
+  { id: 2, name: 'Tabby', image: '/avatars/Avatar 2.png', value: 9 },
+  { id: 3, name: 'Whisper', image: '/avatars/Avatar 3.png', value: 9 },
+  { id: 4, name: 'Arson', image: '/avatars/Avatar 4.png', value: 9 },
 ];
 
 export default function Game() {
@@ -89,24 +89,39 @@ export default function Game() {
       {avatars.map(avatar => (
         <Grid item key={avatar.id}>
           <Grid container alignItems="center" spacing={2}>
-            <Grid item>
-              <Avatar
-                alt={avatar.name}
-                src={avatar.image}
-                sx={{ width: 100, height: 100 }} // Adjust size of the avatar
-              />
+
+            <Grid item xs={4}> {/* Avatar Image and Name */}
+              <Grid container direction="column" alignItems="center">
+                <Grid item>
+                  {/*Avatar Image*/}
+                  <Avatar
+                    alt={avatar.name}
+                    src={avatar.image}
+                    sx={{ width: 100, height: 100 }} // Adjust size of the avatar
+                  />
+                </Grid>
+                 {/*Avatar Name*/}
+                <Grid item>
+                  <Typography variant="subtitle1" align="center" fontWeight='bold'>
+                    {avatar.name}
+                  </Typography>
+                </Grid>
+              </Grid>
             </Grid>
-           
-            <Grid item xs>
+
+            <Grid item xs={8} sm={8} md={8} lg={8}> {/* Slider and Buttons */}
               <Grid container alignItems="center" spacing={2}>
                 <Grid item>
+                   {/*Decrement Button*/}
                   <IconButton
                     onClick={() => handleDecrement(avatar.id)}
-                    style={{ color: 'white', fontSize: '2rem' }} 
+                    style={{ color: 'white'}} 
                   >
                     <ArrowLeft />
                   </IconButton>
                 </Grid>
+
+                {/*Slider*/} 
                 <Grid item xs>
                   <Slider
                     value={avatar.value}
@@ -115,20 +130,23 @@ export default function Game() {
                     max={9}
                     step={1}
                     aria-labelledby="continuous-slider"
-                    sx={{width: '100px', '& .MuiSlider-valueLabel': { backgroundColor: 'transparent' } }} // Adjust slider width and value label background
+                    sx={{ width: '100px', '& .MuiSlider-valueLabel': { backgroundColor: 'transparent' } }} // Adjust slider width and value label background
                     valueLabelDisplay="on"
                   />
                 </Grid>
+
+                 {/*Increment Button*/}
                 <Grid item>
                   <IconButton
                     onClick={() => handleIncrement(avatar.id)}
-                    style={{ color: 'white', fontSize: '2rem'}} 
+                    style={{ color: 'white'}} 
                   >
                     <ArrowRight />
                   </IconButton>
                 </Grid>
               </Grid>
             </Grid>
+
           </Grid>
         </Grid>
       ))}
@@ -146,4 +164,3 @@ export default function Game() {
     </Grid>
   );
 };
-

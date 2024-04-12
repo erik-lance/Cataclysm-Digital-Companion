@@ -112,7 +112,7 @@ export default function Game() {
                     max={9}
                     step={1}
                     aria-labelledby="continuous-slider"
-                    sx={{width: '150px', '& .MuiSlider-valueLabel': { backgroundColor: 'transparent' } }} // Adjust slider width and value label background
+                    sx={{width: '100px', '& .MuiSlider-valueLabel': { backgroundColor: 'transparent' } }} // Adjust slider width and value label background
                     valueLabelDisplay="on"
                   />
                 </Grid>

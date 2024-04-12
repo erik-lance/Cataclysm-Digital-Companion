@@ -95,10 +95,10 @@ export default function Game() {
           Game
         </Typography>
         <Typography variant="h5" align="center" gutterBottom style={{ marginBottom: '30px' }}>
-          Timer: {formatTime(timer)}
+          <span style={{ fontWeight: 'bold' }}>Timer:</span> {formatTime(timer)}
         </Typography>
         <Typography variant="h5" align="center" gutterBottom style={{ marginBottom: '30px' }}>
-          Cycle Count: {cycleCount}
+          <span style={{ fontWeight: 'bold' }}>Cycle Count:</span> {cycleCount}
         </Typography>
       </Grid>
 
@@ -175,11 +175,17 @@ export default function Game() {
           </Grid>
         </Grid>
       ))}
+
       <Dialog open={showDialog}>
-        <DialogTitle>Game Over</DialogTitle>
-        <DialogContent>
+        <DialogTitle sx={{ fontSize: '2em' }}>Game Over</DialogTitle>
+        <DialogContent >
           {nonZeroAvatarNames.map(name => (
-            <Typography key={name}>The winner is {name}</Typography>
+            <Typography key={name} style={{ fontSize: '1.5em' }}>
+              The winner is{' '}
+              <span style={{ fontWeight: name === nonZeroAvatarNames[0] ? 'bold' : 'normal' }}>
+                {name}
+              </span>
+            </Typography>
           ))}
         </DialogContent>
         <DialogActions>

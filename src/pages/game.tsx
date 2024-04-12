@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Slider, Grid, IconButton, Typography, Avatar, Dialog, DialogTitle, DialogContent, DialogActions, Button } from '@mui/material';
+import { Slider, Grid, IconButton, Typography, Avatar, Dialog, DialogTitle, DialogContent, DialogActions, Button, Stack } from '@mui/material';
 import { ArrowLeft, ArrowRight } from '@mui/icons-material';
+import Image from 'next/image';
 
 interface AvatarData {
   id: number;
@@ -21,6 +22,9 @@ export default function Game() {
   const [showDialog, setShowDialog] = useState<boolean>(false);
   const [nonZeroAvatarNames, setNonZeroAvatarNames] = useState<string[]>([]);
   const [cycleCount, setCycleCount] = useState(0);
+  const [showModifiersPrompt, setShowModifiersPrompt] = useState<boolean>(true);
+  const [showModifiers, setShowModifiers] = useState(false);
+  const [getMaxLives, setMaxLives] = useState(9);
 
   useEffect(() => {
     const zeroValueAvatars = avatars.filter(avatar => avatar.value === 0);
@@ -61,7 +65,61 @@ export default function Game() {
     );
   };
 
-  return (
+  const prepareModifiers = () => {
+    setShowModifiersPrompt(false);
+    setShowModifiers(true);
+  };
+
+  const activateModifier = (id: number) => {
+    if (id === 0) {
+      // The Zoomies - All move cards get +2
+      // Do nothing
+    } else if (id === 1) {
+      // Hardcore - Cats start with 5 lives instead of 9
+      // Update slider values
+      setMaxLives(5);
+      handleSliderChange(1, 5);
+      handleSliderChange(2, 5);
+      handleSliderChange(3, 5);
+      handleSliderChange(4, 5);
+    }
+
+    setShowModifiers(false);
+  }
+
+  return <>
+    <Dialog open={showModifiersPrompt}>
+      <DialogTitle>Game Modifiers</DialogTitle>
+      <DialogContent>
+        <Typography>Would you like to play with modifiers?</Typography>
+      </DialogContent>
+      <DialogActions>
+        <Button style={{ color: 'white'}} onClick={() => setShowModifiersPrompt(false)}>No</Button>
+        <Button style={{ color: 'white'}} onClick={() => prepareModifiers()}>Yes</Button>
+      </DialogActions>
+    </Dialog> 
+
+    <Dialog open={showModifiers}>
+      <DialogTitle>Game Modifiers</DialogTitle>
+      <DialogContent>
+        <Typography>Choose a modifier:</Typography>
+        <Stack spacing={1} direction="column" justifyContent="center" alignItems="center">
+          {/* Adds image from /public as start icon */}
+          
+          <Button variant="contained" color="primary" onClick={() => activateModifier(0)} startIcon={<Image src="/events/TheZoomies.png" alt="The Zoomies" width={50} height={50} />}>
+          The Zoomies - All move cards get +2 
+          </Button>
+
+          <Button variant="contained" color="primary" onClick={() => activateModifier(1)} startIcon={<Image src="/events/Hardcore.png" alt="Hardcore" width={50} height={50} />}>
+            Hardcore - Cats start with 5 lives instead of 9.
+          </Button>
+        </Stack>
+      </DialogContent>
+      <DialogActions>
+        <Button style={{ color: 'white'}} onClick={() => setShowModifiers(false)}>Cancel</Button>
+      </DialogActions>
+    </Dialog>
+
     <Grid
       container
       direction="column"
@@ -96,7 +154,7 @@ export default function Game() {
                 sx={{ width: 100, height: 100 }} // Adjust size of the avatar
               />
             </Grid>
-           
+          
             <Grid item xs>
               <Grid container alignItems="center" spacing={2}>
                 <Grid item>
@@ -112,7 +170,7 @@ export default function Game() {
                     value={avatar.value}
                     onChange={(e, newValue) => handleSliderChange(avatar.id, newValue as number)}
                     min={0}
-                    max={9}
+                    max={getMaxLives}
                     step={1}
                     aria-labelledby="continuous-slider"
                     sx={{width: '100px', '& .MuiSlider-valueLabel': { backgroundColor: 'transparent' } }} // Adjust slider width and value label background
@@ -144,6 +202,6 @@ export default function Game() {
         </DialogActions> 
       </Dialog>
     </Grid>
-  );
+  </>;
 };
 

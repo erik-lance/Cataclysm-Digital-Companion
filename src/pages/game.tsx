@@ -1,12 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { Slider, Grid, IconButton, Typography, Avatar, Dialog, DialogTitle, DialogContent, DialogActions, Button, useMediaQuery } from '@mui/material';
+import { Slider, Grid, IconButton, Typography, Avatar, Dialog, DialogTitle, DialogContent, DialogActions, Button, Stack, Paper, useMediaQuery } from '@mui/material';
 import { ArrowLeft, ArrowRight } from '@mui/icons-material';
+import Image from 'next/image';
 
 interface AvatarData {
   id: number;
   name: string;
   image: string; // URL of the avatar image
   value: number;
+}
+
+interface ModifierData {
+  id: number;
+  name: string;
+  description: string;
+  image: string; // URL of the modifier image
 }
 
 const initialAvatars: AvatarData[] = [
@@ -16,11 +24,20 @@ const initialAvatars: AvatarData[] = [
   { id: 4, name: 'Arson', image: '/avatars/Avatar 4.png', value: 9 },
 ];
 
+const modifiers: ModifierData[] = [
+  { id: 0, name: 'The Zoomies', description: 'All move cards get +2', image: '/events/Zoomies.png' },
+  { id: 1, name: 'Hardcore', description: 'Cats start with 5 lives instead of 9', image: '/events/Hardcore.png' },
+];
+
 export default function Game() {
   const [avatars, setAvatars] = useState<AvatarData[]>(initialAvatars);
   const [showDialog, setShowDialog] = useState<boolean>(false);
   const [nonZeroAvatarNames, setNonZeroAvatarNames] = useState<string[]>([]);
   const [cycleCount, setCycleCount] = useState(0);
+  const [showModifiersPrompt, setShowModifiersPrompt] = useState<boolean>(true);
+  const [showModifiers, setShowModifiers] = useState(false);
+  const [getMaxLives, setMaxLives] = useState(9);
+  const [getCurrentModifier, setCurrentModifier] = useState(-1);
   const [timer, setTimer] = useState<number>(0);
 
   useEffect(() => {
@@ -81,7 +98,68 @@ export default function Game() {
     );
   };
 
-  return (
+  const prepareModifiers = () => {
+    setShowModifiersPrompt(false);
+    setShowModifiers(true);
+  };
+
+  const activateModifier = (id: number) => {
+    if (id === 0) {
+      // The Zoomies - All move cards get +2
+      // Do nothing
+    } else if (id === 1) {
+      // Hardcore - Cats start with 5 lives instead of 9
+      // Update slider values
+      setMaxLives(5);
+      handleSliderChange(1, 5);
+      handleSliderChange(2, 5);
+      handleSliderChange(3, 5);
+      handleSliderChange(4, 5);
+    }
+
+    setShowModifiers(false);
+    setCurrentModifier(id);
+  }
+
+  return <>
+    <Dialog open={showModifiersPrompt}>
+      <DialogTitle>Game Modifiers</DialogTitle>
+      <DialogContent>
+        <Typography>Would you like to play with modifiers?</Typography>
+      </DialogContent>
+      <DialogActions>
+        <Button style={{ color: 'white'}} onClick={() => setShowModifiersPrompt(false)}>No</Button>
+        <Button style={{ color: 'white'}} onClick={() => prepareModifiers()}>Yes</Button>
+      </DialogActions>
+    </Dialog> 
+
+    <Dialog open={showModifiers}>
+      <DialogTitle>Game Modifiers</DialogTitle>
+      <DialogContent>
+        <Typography>Choose a modifier</Typography>
+        
+        <Stack spacing={1} direction="column" alignItems="flex-start" justifyContent="center" mt={2}>
+          {/* Adds image from /public as start icon */}
+          {/* Makes button use full width of stack with text on the left */}
+          {modifiers.map(modifier => (
+            <Button
+              key={modifier.id}
+              variant="contained"
+              color="secondary"
+              startIcon={<Image src={modifier.image} alt={modifier.name} width={50} height={50} />}
+              onClick={() => activateModifier(modifier.id)}
+
+            >
+              {modifier.name} - {modifier.description}
+            </Button>
+          ))}
+        </Stack>
+      </DialogContent>
+      <DialogActions>
+        <Button style={{ color: 'white'}} onClick={() => setShowModifiers(false)}>Cancel</Button>
+      </DialogActions>
+    </Dialog>
+
     <Grid
       container
       direction="column"
@@ -110,6 +188,30 @@ export default function Game() {
           Next Cycle
         </Button>
       </Grid>
+
+      { getCurrentModifier !== -1 && (
+        <Grid item xl lg md sm xs> {/* Modifier (if any) */}
+          <Grid container alignItems="center">
+            <Paper elevation={3} style={{ padding: '10px' }}  sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', gap:2}}>
+              <Grid item>
+                <Avatar
+                  alt={modifiers[getCurrentModifier].name}
+                  src={modifiers[getCurrentModifier].image}
+                  sx={{ width: 75, height: 75 }} // Adjust size of the avatar
+                />
+              </Grid>
+              <Grid item>
+                <Typography variant="h6" align="left" gutterBottom>
+                  {modifiers[getCurrentModifier].name}
+                </Typography>
+                <Typography variant="body1" align="left" gutterBottom>
+                  {modifiers[getCurrentModifier].description}
+                </Typography>
+              </Grid>
+            </Paper>
+          </Grid>
+        </Grid>
+      )}
 
       {avatars.map(avatar => (
         <Grid item key={avatar.id}>
@@ -152,7 +254,7 @@ export default function Game() {
                     value={avatar.value}
                     onChange={(e, newValue) => handleSliderChange(avatar.id, newValue as number)}
                     min={0}
-                    max={9}
+                    max={getMaxLives}
                     step={1}
                     aria-labelledby="continuous-slider"
                     sx={{ width: '100px', '& .MuiSlider-valueLabel': { backgroundColor: 'transparent' } }} // Adjust slider width and value label background
@@ -193,5 +295,5 @@ export default function Game() {
         </DialogActions>
       </Dialog>
     </Grid>
-  );
+  </>;
 };

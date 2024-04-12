@@ -11,7 +11,7 @@ export default function GameCards() {
         <Grid container direction="column" justifyContent="center" alignItems="center" p={3}>
 
             <Grid item lg>
-                <Typography variant="h3" align="center" gutterBottom>
+                <Typography variant="h3" align="center" gutterBottom fontWeight="bold">
                         Move Cards
                 </Typography>
             </Grid>
@@ -24,7 +24,7 @@ export default function GameCards() {
                         <Grid item key={index} xs={6} sm={4} md={3} lg={2}>
                             <Card>
                                 <CardActionArea href={`/card/${card.id}`}>
-                                    <CardMedia component="img" image="cards/question.png" alt={card.name} />         
+                                    <CardMedia component="img" image={`/cards/${card.image}`} alt={card.name} />         
                                 </CardActionArea>
                             </Card>
                         </Grid>
@@ -34,7 +34,7 @@ export default function GameCards() {
             </Grid>
 
             <Grid item lg>
-                <Typography variant="h3" align="center" gutterBottom style={{ marginTop: '50px' }}>
+                <Typography variant="h3" align="center" gutterBottom style={{ marginTop: '60px' }} fontWeight="bold">
                         Action Cards
                 </Typography>
             </Grid>
@@ -46,7 +46,7 @@ export default function GameCards() {
                         <Grid item key={index} xs={6} sm={4} md={3} lg={2}>
                             <Card>
                                 <CardActionArea href={`/card/${card.id}`}>
-                                    <CardMedia component="img" image="cards/question.png" alt={card.name} />
+                                    <CardMedia component="img" image={`/cards/${card.image}`} alt={card.name} />
                                 </CardActionArea>
                             </Card>
                         </Grid>
@@ -56,7 +56,7 @@ export default function GameCards() {
             </Grid>
 
             <Grid item lg>
-                <Typography variant="h3" align="center" gutterBottom style={{ marginTop: '50px' }}>
+                <Typography variant="h3" align="center" gutterBottom style={{ marginTop: '60px' }} fontWeight="bold">
                         Powerup Cards
                 </Typography>
             </Grid>
@@ -69,7 +69,7 @@ export default function GameCards() {
                         <Grid item key={index} xs={6} sm={4} md={3} lg={2}>
                             <Card>
                                 <CardActionArea href={`/card/${card.id}`}>
-                                    <CardMedia component="img" image="cards/question.png" alt={card.name} />
+                                    <CardMedia component="img" image={`/cards/${card.image}`} alt={card.name} />
                                     
                                 </CardActionArea>
                             </Card>

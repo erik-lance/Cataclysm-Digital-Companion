@@ -2,61 +2,61 @@
     {
         "id": 0,
         "name": "CATWALK",
-        "image": "catwalk.png",
+        "image": "Catwalk.png",
         "description": "Move 1 tile",
         "type": "Move",
         "numCopies": 8,  
-        "detailed": "Moves 1 tile either horizontally or vertically. Has to move unless blocked in all directions."
+        "detailed": "Moves 1 tile either horizontally or vertically. You must move unless you are blocked on all directions."
     },
     {
         "id": 1,
         "name": "CATRUN",
-        "image": "catrun.png",
-        "description": "Move 2 tiles or less",
+        "image": "Catrun.png",
+        "description": "Move 1 - 2 tiles",
         "type": "Move",
         "numCopies": 4,  
-        "detailed": "Moves 2 tiles or less either horizontally or vertically. Has to move unless blocked in all directions."
+        "detailed": "Moves 1 - 2 tiles either horizontally or vertically. You must move at least 1 tile unless you are blocked on all directions."
     },
     {
         "id": 2,
         "name": "CATLEAP",
-        "image": "catleap.png",
-        "description": "Move 3 tiles or less",
+        "image": "Catleap.png",
+        "description": "Move 1 - 3 tiles",
         "type": "Move",
         "numCopies": 4,  
-        "detailed": "Moves 3 tiles or less either horizontally or vertically. Has to move unless blocked in all directions."
+        "detailed": "Moves 1 - 3 tiles either horizontally or vertically. You must move at least 1 tile unless you are blocked on all directions."
     },
     {
         "id": 3,
         "name": "CATMOBILE",
-        "image": "catmobile.png",
-        "description": "Move 4 tiles or less",
+        "image": "Catmobile.png",
+        "description": "Move 1 - 4 tiles",
         "type": "Move",
         "numCopies": 4,  
-        "detailed": "Moves 4 tiles or less either horizontally or vertically. Has to move unless blocked in all directions."
+        "detailed": "Moves 1 - 4 tiles either horizontally or vertically. You must move at least 1 tile unless you are blocked on all directions."
     },
     {
         "id": 4,
         "name": "BRISK WALK",
-        "image": "brisk_walk.png",
-        "description": "Move 2 tiles or less and take priority for the next action only.",
+        "image": "Skip the Line.png",
+        "description": "Move 1 - 2 tiles and take priority for the next action only.",
         "type": "Move",
         "numCopies": 4,  
-        "detailed": "Moves 2 tiles or less either horizontally or vertically. Has to move unless blocked in all directions. Player goes first during the next set of actions only."
+        "detailed":  "Move 1 - 2 tiles either horizontall or vertically and take priority for the next action only. You must move at least 1 tile unless you are blocked on all directions."
     },
     {
         "id": 5,
         "name": "QUICKSTEP",
-        "image": "quickstep.png",
-        "description": "Move 1 tile. This card can be inserted and played as a 4th action any time at any action order.",
+        "image": "Quickstep.png",
+        "description": "Move 1 tile. This card can be played from hand anytime during action phase.",
         "type": "Move",
         "numCopies": 2,  
-        "detailed": "Moves 1 tile either horizontally or vertically. Has to move unless blocked in all directions. This card can be played instantly as a 4th action at any time or at any action order."
+        "detailed": "Moves 1 tile either horizontally or vertically. This card can be played from hand anytime during action phase. You must move unless you are blocked on all directions."
     },
     {
         "id": 6,
         "name": "HOT FURBALL",
-        "image": "hot_furball.png",
+        "image": "Hot Furball.png",
         "description": "Hit the first target player in a horizontal, vertical, diagonal direction from you.",
         "type": "Action",
         "numCopies": 6,  
@@ -65,8 +65,8 @@
     {
         "id": 7,
         "name": "STATIC BOLT",
-        "image": "static_bolt.png",
-        "description": "Deal 3 dmg to all players in a diagonal line one direction from you.",
+        "image": "Static Bolt.png",
+        "description": "Deal 3 dmg to All players in a diagonal line one direction from you.",
         "type": "Action",
         "numCopies": 4,  
         "detailed": ""
@@ -74,26 +74,26 @@
     {
         "id": 8,
         "name": "KATRATE",
-        "image": "katrate.png",
-        "description": "Deal 4 dmg to all players in a 1 tile radius around you.",
+        "image": "Katrate.png",
+        "description": "Deal 4 dmg to All players in a 1 tile radius around you.",
         "type": "Action",
         "numCopies": 2,  
-        "detailed": ""
+        "detailed": "Deal 4 dmg to All players in a 1 tile radius around you. This is a card with very powerful damage but lacks in range, so get real close to your enemies to make this action connect."
     },
     {
         "id": 9,
         "name": "THUMBTACKS",
-        "image": "thumbtacks.png",
-        "description": "Deal 1 dmg per tile moved, to all players including yourself after this action is revealed.",
+        "image": "Thumbtacks.png",
+        "description": "Deal 1 dmg per tile moved to All players after this action is revealed.",
         "type": "Action",
         "numCopies": 2,  
-        "detailed": ""
+        "detailed": "Deal 1 dmg per tile moved to All players after this action is revealed. Players who moved before the reveal of this card do not receive the damage penalty. Best to not play move cards after this card so you don't hurt yourself"
     },
     {
         "id": 10,
         "name": "CATACLYSM",
-        "image": "cataclysm.png",
-        "description": "On Action 3 of next turn, deal 3 dmg to all enemies that are not within a 4 tile radius of you.",
+        "image": "Cataclysm.png",
+        "description": "At the end of Action 3 next turn, deal 3 dmg to all enemies that are not within a 4 tile radius of you.",
         "type": "Action",
         "numCopies": 2,  
         "detailed": ""
@@ -101,8 +101,8 @@
     {
         "id": 11,
         "name": "CATLING GUN",
-        "image": "catling_gun.png",
-        "description": "Shoot in all horizontal and vertical directions and deal 2 dmg to all enemies in the literal crossfire.",
+        "image": "Catling Gun.png",
+        "description": "Deal 2 dmg in All horizontal and vertical directions to All enemies.",
         "type": "Action",
         "numCopies": 2,  
         "detailed": ""
@@ -110,62 +110,62 @@
     {
         "id": 12,
         "name": "CATOMIC BOMB",
-        "image": "catomic_bomb.png",
-        "description": "Mark a single tile anywhere on the board. By the end of next turn, deal 3 dmg in a 2 tile radius from the marked tile to All players including yourself.",
+        "image": "Catomic Bomb.png",
+        "description": "Mark any tile on the board. At the end of Action 3 next turn, deal 3 dmg in a 2 tile radius from the marked tile to All players.",
         "type": "Action",
         "numCopies": 2,  
-        "detailed": "Mark a single tile: a tile on the board will be targeted. Place a marker tile.\nEnd of next turn: card takes effect after the last played card in the next cycle\nRadius 2: any players within a 2 tile range will be affected once activated. (count 2 tiles in all directions including diagonally)."
+        "detailed": ""
     },
     {
         "id": 13,
         "name": "DEATH STARE",
-        "image": "death_stare.png",
+        "image": "Death Stare.png",
         "description": "Deal 1 dmg to a single enemy in a 4 tile radius around you.",
         "type": "Action",
         "numCopies": 4,  
-        "detailed": ""
+        "detailed": "Deal 1 dmg to a single enemy in a 4 tile radius around you. This is a weak attack but it's easy to connect thanks to its good range. Perhaps combo it with good buff cards to make it better."
     },
     {
         "id": 14,
         "name": "THE CLAW",
-        "image": "the_claw.png",
-        "description": "Deal 2 dmg to a single target in a horizontal, vertical, diagonal line that is 3 tiles from you.",
+        "image": "The Claw.png",
+        "description": "Deal 2 dmg to a single target in a horizontal, vertical, or diagonal line that is 3 tiles from you.",
         "type": "Action",
         "numCopies": 2,  
         "detailed": ""
     },
     {
         "id": 15,
-        "name": "THE DISINTEGRATOR",
-        "image": "the_disintegrator.png",
-        "description": "Target a single row or column beside you and deal 3 dmg to all enemies there.",
+        "name": "DISINTIGRATOR",
+        "image": "Disintigrator.png",
+        "description": "Target an entire roww or column beside you and deal 3 dmg to all enemies there.",
         "type": "Action",
         "numCopies": 2,  
         "detailed": ""
     },
     {
         "id": 16,
-        "name": "CAT JAB",
-        "image": "cat_jab.png",
-        "description": "Deal 2 dmg to a player in a 2 tile radius around you with 5 lives or more. Otherwise, deal 1 dmg.",
+        "name": "CATJAB",
+        "image": "Catjab.png",
+        "description": "Deal 2 dmg in a 2 tile radius around you to an enemy with 5 lives or more. Otherwise, deal 1 dmg.",
         "type": "Action",
         "numCopies": 2,  
         "detailed": ""
     },
     {
         "id": 17,
-        "name": "CAT HAYMAKER",
-        "image": "cat_haymaker.png",
-        "description": "Deal 1 dmg multiplied by the action order that you played this card. Hit a single target in a 2 tile radius around you.",
+        "name": "CATHAYMAKER",
+        "image": "Cathaymaker.png",
+        "description": "Deal 1 dmg multiplied by the action order that you played this card in a 2 tile radius around you.",
         "type": "Action",
         "numCopies": 2,  
-        "detailed": ""
+        "detailed": "Deal 1 dmg multiplied by the action order that you played this card in a 2 tile radius around you. Best to use this card on the third turn for a maximum damage of 3."
     },
     {
         "id": 18,
         "name": "KATMIKAZE",
-        "image": "katmikaze.png",
-        "description": "Halve the lives (upper bound) of all players in a 1 tile radius around you including yourself. Skip an action to discard this card",
+        "image": "Katmikaze.png",
+        "description": "Halve the lives (upper bound) of All players in a 2 tile radius. Skip an action to discard this card.",
         "type": "Action",
         "numCopies": 1,  
         "detailed": ""
@@ -173,26 +173,26 @@
     {
         "id": 19,
         "name": "STEROIDS",
-        "image": "steroids.png",
+        "image": "Steroids.png",
         "description": "Add 2 to your next action.",
         "type": "Action",
         "numCopies": 4,  
-        "detailed": ""
+        "detailed": "Add 2 to your next action. If the next action to this card does not have a number at the bottom left, then Steroids was wasted. Strategically combo this with move or attack cards for maximum value."
     },
     {
         "id": 20,
         "name": "LAZY ROLL",
-        "image": "lazy_roll.png",
-        "description": "Dodge all targeted cards for this action only.",
+        "image": "Lazy Roll.png",
+        "description": "Dodge all targeted cards during this action order only.",
         "type": "Action",
         "numCopies": 6,  
-        "detailed": ""
+        "detailed": "Dodge all targeted cards during this action order only. Damage is finalized at the end of turn. So if you revealed this card before you get attacked or after you get attacked on the same action cycle, its the same result = you were able to successfully dodge it. Timing is everything."
     },
     {
         "id": 21,
         "name": "TELEPORTATION",
-        "image": "teleportation.png",
-        "description": "Can only be played on action 3. Pick any unoccupied tile and transfer there. This does not count as moving.",
+        "image": "Teleportation.png",
+        "description": "Transfer to any unoccupied tile. Must be played on Action 3. Does not count as moving.",
         "type": "Action",
         "numCopies": 2,  
         "detailed": ""
@@ -200,16 +200,16 @@
     {
         "id": 22,
         "name": "TENTH LIFE",
-        "image": "tenth_life.png",
-        "description": "If you were supposed to die this turn, don’t. Activated even when unrevealed.",
+        "image": "Tenth Life.png",
+        "description": "If you were supposed to die this turn, don’t. Remain with 1 life, activated on play even when dead.",
         "type": "Action",
         "numCopies": 2,  
-        "detailed": ""
+        "detailed": "If you were supposed to die this turn, don’t. Remain with 1 life, activated on play even when dead. If you played this card on Action Cycle 3, but was killed on Action Cycle 1, the effect of this card still activates and you are revived next turn with 1 life. But since you were killed, whatever card you played on Action Cycle 2 is no longer revealed unless it was a Tenth Life card. This card is not stackable on the same turn, activating it twice will still leave you with 1 life. If Tenth Life was discarded due to Growl or Lullaby, then Tenth Life no longer ativates and its a sad day for you."
     },
     {
         "id": 23,
         "name": "CATJUTSU",
-        "image": "catjutsu.png",
+        "image": "Catjutsu.png",
         "description": "Swap positions with a target player. Does not count as moving.",
         "type": "Action",
         "numCopies": 2,  
@@ -218,35 +218,35 @@
     {
         "id": 24,
         "name": "SAIYAN CAT",
-        "image": "saiyan_cat.png",
+        "image": "Saiyan Cat.png",
         "description": "Trigger your next action twice.",
         "type": "Action",
         "numCopies": 2,  
-        "detailed": ""
+        "detailed": "Trigger your next action twice. Two Saiyan Cats do not stack and only works if the next card is a non-Saiyan Cat card."
     },
     {
         "id": 25,
         "name": "FEEDING TIME",
-        "image": "feeding_time.png",
-        "description": "Negate All Move cards after this action is played for this turn only.",
+        "image": "Feeding Time.png",
+        "description": "Negate All Move cards for the rest of the turn.",
         "type": "Action",
         "numCopies": 2,  
-        "detailed": ""
+        "detailed": "Negate All Move cards for the rest of the turn, including your own. Move cards can still be activated before Feeding Time was played. So if you don't want anyone to move, best to play this first."
     },
     {
         "id": 26,
         "name": "REFLECTION",
-        "image": "reflection.png",
-        "description": "Reflect all dmg you took this action to the players who played them.",
+        "image": "Reflection.png",
+        "description": "If you received dmg from an attack played this turn, deal that amount to the ones who played them.",
         "type": "Action",
         "numCopies": 4,  
-        "detailed": ""
+        "detailed": "If you received dmg from an attack played this turn, deal that amount to the ones who played them. This card does not prevent damage. Whatever amount of damage the player received is the amount of damage returned to whoever attacked them with."
     },
     {
         "id": 27,
         "name": "NOTHING",
-        "image": "nothing.png",
-        "description": "Do nothing this turn you lazy cat.",
+        "image": "Nothing.png",
+        "description": "You won't perform any action.",
         "type": "Action",
         "numCopies":2 ,  
         "detailed": ""
@@ -254,61 +254,61 @@
     {
         "id": 28,
         "name": "SCAREDY CAT",
-        "image": "scaredy_cat.png",
-        "description": "You are unable to deal dmg or receive dmg for the rest of the turn.",
+        "image": "Scaredy Cat.png",
+        "description": "You are immune to dmg but unable to deal dmg with cards this turn.",
         "type": "Action",
         "numCopies": 2,  
-        "detailed": ""
+        "detailed": "You are immune to dmg but unable to deal dmg with cards this turn. This card disables you from dealing damage the turn you played it, so playing attack cards are like playing nothing. However, if you played Event cards last turn then Scaredy cat the next turn, your damage from the Event cards would still hurt your enemies because it is from a card of a different turn. All of that while still being immune to damage from Scaredy Cat's ability, a pretty good combo to know."
     },
     {
         "id": 29,
         "name": "GROWL",
-        "image": "growl.png",
-        "description": "A target player does not play their Action3 this turn.",
+        "image": "Growl.png",
+        "description": "A target player discards their rightmost action.",
         "type": "Action",
         "numCopies": 3,  
-        "detailed": ""
+        "detailed": "A target player discards their rightmost action. You can only discard cards that are not revealed yet. Discarding an activated card does not undo its effects. Playing Saiyan Cat into growl makes a target player discard 2 actions leaving them with only one action for the entire turn. A nasty combo that you shouldn't know."
     },
     {
         "id": 30,
         "name": "CAT LEASH",
-        "image": "cat_leash.png",
+        "image": "Cat Leash.png",
         "description": "Move a target player 2 tiles or less.",
         "type": "Action",
         "numCopies": 1,  
-        "detailed": ""
+        "detailed": "Move a target player 2 tiles or less. You can not move yourself, only enemies."
     },
     {
         "id": 31,
         "name": "COPYCAT",
-        "image": "copycat.png",
-        "description": "Select an action already played this turn by an enemy, copy that action.",
+        "image": "Copycat.png",
+        "description": "Select an action already played this turn and copy that action.",
         "type": "Powerup",
         "numCopies": 1,  
-        "detailed": ""
+        "detailed": "Select an action already played this turn and copy that action. You can copy any revealed card currently on the board, even powerups."
     },
     {
         "id": 32,
         "name": "SNIPURR",
-        "image": "snipurr.png",
-        "description": "In a horizontal or vertical direction, deal dmg to a target enemy leaving them with only 1 life.",
+        "image": "Snipurr.png",
+        "description": "Deal 9 dmg in a horizontal or vertical direction.",
         "type": "Powerup",
         "numCopies": 1,  
-        "detailed": ""
+        "detailed": "Deal 9 dmg in a horizontal or vertical direction. Just to be clear, yes, this card is an insta-kill. Stay out of sight."
     },
     {
         "id": 33,
         "name": "LULLABY",
-        "image": "lullaby.png",
-        "description": "All other players take 1 less action next turn.",
+        "image": "Lullaby.png",
+        "description": "All other players discard their rightmost action.",
         "type": "Powerup",
         "numCopies": 1,  
-        "detailed": ""
+        "detailed": "All other players discard their rightmost action.  Just a more evil version of Growl, because you affect everyone, no more choosing."
     },
     {
         "id": 34,
-        "name": "PLATEMAIL",
-        "image": "platemail.png",
+        "name": "BODYGUARDS",
+        "image": "Bodyguards.png",
         "description": "Be immune to dmg for the entire turn.",
         "type": "Powerup",
         "numCopies": 1,  
@@ -316,9 +316,9 @@
     },
     {
         "id": 35,
-        "name": "HEAT-SEEKING HEAT",
-        "image": "heat_seeking_heat.png",
-        "description": "Deal 1 dmg to the nearest player to you. Deal dmg to all in a tie.",
+        "name": "HEATSEEKER",
+        "image": "Heatseeker.png",
+        "description": "Deal 2 dmg to All enemies.",
         "type": "Powerup",
         "numCopies": 1,  
         "detailed": ""
@@ -326,10 +326,10 @@
     {
         "id": 36,
         "name": "INVESTMENT",
-        "image": "investment.png",
-        "description": "When this action is revealed, replace it with an action from hand and play it.",
+        "image": "Investment.png",
+        "description": "Replace this action with a card from your hand and play it twice.",
         "type": "Powerup",
         "numCopies": 1,  
-        "detailed": ""
+        "detailed": "Replace this action with a card from your hand and play it twice. Investment triggers the action twice and so does Saiyan Cat. So Saiyan Cat into Investment is stackable and triggers it four times, 2 x 2 = 4."
     }   
 ]

@@ -254,7 +254,7 @@ export default function Game() {
                     value={avatar.value}
                     onChange={(e, newValue) => handleSliderChange(avatar.id, newValue as number)}
                     min={0}
-                    max={9}
+                    max={getMaxLives}
                     step={1}
                     aria-labelledby="continuous-slider"
                     sx={{ width: '100px', '& .MuiSlider-valueLabel': { backgroundColor: 'transparent' } }} // Adjust slider width and value label background

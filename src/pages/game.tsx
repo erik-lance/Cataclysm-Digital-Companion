@@ -20,7 +20,7 @@ interface ModifierData {
 const initialAvatars: AvatarData[] = [
   { id: 1, name: 'Slick', image: '/avatars/Avatar 1.png', value: 9 },
   { id: 2, name: 'Tabby', image: '/avatars/Avatar 2.png', value: 9 },
-  { id: 3, name: 'Whisper', image: '/avatars/Avatar 3.png', value: 9 },
+  { id: 3, name: 'Whisker', image: '/avatars/Avatar 3.png', value: 9 },
   { id: 4, name: 'Arson', image: '/avatars/Avatar 4.png', value: 9 },
 ];
 

@@ -107,7 +107,10 @@ export function get_crates_with_powerups(map: MapData): MapData {
     let powerup_coords: number[][] = [];
     for (let i = 0; i < powerups; i++) {
         let index = Math.floor(Math.random() * crate_coords.length);
-        powerup_coords.push(crate_coords[index]);
+        // 50/50 chance to have a powerup
+        if (Math.random() < 0.5) {
+            powerup_coords.push(crate_coords[index]);
+        }
         crate_coords.splice(index, 1);
     }
 

@@ -1,7 +1,7 @@
 import { Avatar, Box, Button, Card, CardActionArea, CardContent, CardMedia, Chip, Container, Divider, Grid, List, ListItem, ListItemAvatar, ListItemText, Stack, Typography } from '@mui/material';
 import map_data from '../../data/map_data.json';
 import { useRouter } from 'next/router';
-import { MapData } from '@/utils/randomizer';
+import { MapData, get_crates_with_powerups } from '@/utils/randomizer';
 import { useEffect, useState } from 'react';
 
 function tile_translator(value: number): string {
@@ -12,6 +12,8 @@ function tile_translator(value: number): string {
             return "crate";
         case 2:
             return "wall";
+        case 9:
+            return "powerup";
         default:
             return "unknown";
     }
@@ -28,7 +30,8 @@ export default function Map() {
 
     useEffect(() => {
         if (mapNum >= 0 && mapNum < map_data.length) {
-            setSelectedMap(map_data[mapNum]);
+            // After retrieving map, call powerups randomizer to replace map data
+            setSelectedMap(get_crates_with_powerups(map_data[mapNum]));
             let obstacles = 0;
             let walls = 0;
             map_data[mapNum].tiles.forEach(row => {

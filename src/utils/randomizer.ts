@@ -13,3 +13,54 @@ export interface MapData {
 export function random_select(): number {
     return Math.floor(Math.random() * map_data.length);
 }
+
+/**
+ * Randomly selects crates (tiles with value 1) from a map and
+ * marks them to have powerups (tiles with value 9)
+ * @param map 
+ */
+export function get_crates_with_powerups(map: MapData): MapData {
+    let powerups = 0;
+    let crates = 0;
+    
+    // Get the number of crates in the map
+    map.tiles.forEach(row => {
+        row.forEach(tile => {
+            if (tile === 1) { crates++; }
+        });
+    });
+
+    // Get coordinates of all crates
+    let crate_coords: number[][] = [];
+    map.tiles.forEach((row, y) => {
+        row.forEach((tile, x) => {
+            if (tile === 1) {
+                crate_coords.push([x, y]);
+            }
+        });
+    });
+
+    // Up to 6 crates can have powerups. If there are less than 6 crates,
+    // then all crates will have powerups. If there are more than 6 crates,
+    // then randomly select 6 crates to have powerups.
+    if (crates <= 6) {
+        powerups = crates;
+    } else {
+        powerups = 6;
+    }
+
+    // Randomly select crates to have powerups
+    let powerup_coords: number[][] = [];
+    for (let i = 0; i < powerups; i++) {
+        let index = Math.floor(Math.random() * crate_coords.length);
+        powerup_coords.push(crate_coords[index]);
+        crate_coords.splice(index, 1);
+    }
+
+    // Mark the crates with powerups
+    powerup_coords.forEach(coord => {
+        map.tiles[coord[1]][coord[0]] = 9;
+    });
+
+    return map;
+}

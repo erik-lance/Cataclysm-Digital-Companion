@@ -35,7 +35,11 @@ export default function Game() {
 
   const handleNextCycle = () => {
     setCycleCount(prevCount => prevCount + 1);
-  };  
+  };
+
+  const handlePreviousCycle = () => {
+    setCycleCount(prevCount => Math.max(0, prevCount - 1));
+  };
 
   const handleSliderChange = (id: number, newValue: number) => {
     setAvatars(prevAvatars =>
@@ -82,9 +86,14 @@ export default function Game() {
         </Typography>
       </Grid>
 
-      <Button variant="contained" color="primary" onClick={handleNextCycle} style={{ marginBottom: '20px' }} >
-        Next Cycle
-      </Button>
+      <Grid item container justifyContent="center" style={{ marginBottom: '20px' }}>
+        <Button variant="contained" color="primary" onClick={handlePreviousCycle} style={{ marginRight: '20px' }}>
+          Previous Cycle
+        </Button>
+        <Button variant="contained" color="primary" onClick={handleNextCycle}>
+          Next Cycle
+        </Button>
+      </Grid>
 
       {avatars.map(avatar => (
         <Grid item key={avatar.id}>

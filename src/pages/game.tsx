@@ -20,7 +20,6 @@ export default function Game() {
   const [avatars, setAvatars] = useState<AvatarData[]>(initialAvatars);
   const [showDialog, setShowDialog] = useState<boolean>(false);
   const [nonZeroAvatarNames, setNonZeroAvatarNames] = useState<string[]>([]);
-  const [redirect, setRedirect] = useState<boolean>(false); // State for redirection
 
   useEffect(() => {
     const zeroValueAvatars = avatars.filter(avatar => avatar.value === 0);
@@ -113,7 +112,7 @@ export default function Game() {
                     max={9}
                     step={1}
                     aria-labelledby="continuous-slider"
-                    sx={{ width: '200px', '& .MuiSlider-valueLabel': { backgroundColor: 'transparent' } }} // Adjust slider width and value label background
+                    sx={{width: '150px', '& .MuiSlider-valueLabel': { backgroundColor: 'transparent' } }} // Adjust slider width and value label background
                     valueLabelDisplay="on"
                   />
                 </Grid>

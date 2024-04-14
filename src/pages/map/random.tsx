@@ -1,8 +1,9 @@
-import { Avatar, Box, Button, Card, CardActionArea, CardContent, CardMedia, Chip, Container, Divider, Grid, List, ListItem, ListItemAvatar, ListItemText, Stack, Typography } from '@mui/material';
+import { Avatar, Box, Button, Card, CardActionArea, CardContent, CardMedia, Chip, Container, Divider, Grid, IconButton, List, ListItem, ListItemAvatar, ListItemText, Stack, Typography } from '@mui/material';
 import map_data from '../../data/map_data.json';
 import { useRouter } from 'next/router';
 import { MapData, randomizeMapData, get_crates_with_powerups } from '@/utils/randomizer';
 import { useEffect, useState } from 'react';
+import { Refresh } from '@mui/icons-material';
 
 function tile_translator(value: number): string {
     switch (value) {
@@ -195,6 +196,16 @@ export default function Map() {
                                     >
                                     Begin
                                 </Button>
+                            </Grid>
+                            
+                            <Grid item>
+                                <IconButton
+                                    color="info"
+                                    
+                                    href='/map/random'
+                                >
+                                    <Refresh />
+                                </IconButton>
                             </Grid>
                         </Grid>
                 </Grid>

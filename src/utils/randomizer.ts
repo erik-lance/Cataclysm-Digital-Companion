@@ -13,7 +13,8 @@ export interface MapData {
  * under map_data.json
  */
 export function random_select(): number {
-    return Math.floor(Math.random() * map_data.length);
+    const rng = seedrandom(Date.now().toString());
+    return Math.floor(rng() * map_data.length);
 }
 
 /**
@@ -141,13 +142,14 @@ function generate_players(map: MapData): MapData {
     // We generate four players at the followg coordinates:
     // (7,0), (0,1), (1,8), (8,7)
     // and we mark them with values 4, 5, 6, 7 distributed randomly
-    const player_coords = [[7,0], [0,1], [1,8], [8,7]];
+    let spawn_coords = player_coords;
 
     // Shuffle the player values
-    player_coords.sort(() => Math.random() - 0.5);
+    const rng = seedrandom(Date.now().toString());
+    spawn_coords.sort(() => rng() - 0.5);
 
     const player_values = [4, 5, 6, 7];
-    player_coords.forEach((coord, index) => {
+    spawn_coords.forEach((coord, index) => {
         map.tiles[coord[1]][coord[0]] = player_values[index];
     });
 

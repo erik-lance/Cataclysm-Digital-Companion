@@ -12,6 +12,16 @@ function tile_translator(value: number): string {
             return "crate";
         case 2:
             return "wall";
+        case 3:
+            return "unknown";
+        case 4:
+            return "slick";
+        case 5:
+            return "tabby";
+        case 6:
+            return "whisker";
+        case 7:
+            return "arson";
         case 9:
             return "powerup";
         default:

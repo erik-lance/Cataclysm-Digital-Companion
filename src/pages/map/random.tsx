@@ -1,6 +1,4 @@
 import { Avatar, Box, Button, Card, CardActionArea, CardContent, CardMedia, Chip, Container, Divider, Grid, IconButton, List, ListItem, ListItemAvatar, ListItemText, Stack, Typography } from '@mui/material';
-import map_data from '../../data/map_data.json';
-import { useRouter } from 'next/router';
 import { MapData, randomizeMapData, get_crates_with_powerups } from '@/utils/randomizer';
 import { useEffect, useState } from 'react';
 import { Refresh } from '@mui/icons-material';
@@ -13,6 +11,16 @@ function tile_translator(value: number): string {
             return "crate";
         case 2:
             return "wall";
+        case 3:
+            return "unknown";
+        case 4:
+            return "slick";
+        case 5:
+            return "tabby";
+        case 6:
+            return "whisker";
+        case 7:
+            return "arson";
         case 9:
             return "powerup";
         default:

@@ -119,5 +119,25 @@ export function get_crates_with_powerups(map: MapData): MapData {
         map.tiles[coord[1]][coord[0]] = 9;
     });
 
+    // Add player values to the map
+    map = generate_players(map);
+
+    return map;
+}
+
+export function generate_players(map: MapData): MapData {
+    // We generate four players at the followg coordinates:
+    // (7,0), (0,1), (1,8), (8,7)
+    // and we mark them with values 4, 5, 6, 7 distributed randomly
+    const player_coords = [[7,0], [0,1], [1,8], [8,7]];
+
+    // Shuffle the player values
+    player_coords.sort(() => Math.random() - 0.5);
+
+    const player_values = [4, 5, 6, 7];
+    player_coords.forEach((coord, index) => {
+        map.tiles[coord[1]][coord[0]] = player_values[index];
+    });
+
     return map;
 }

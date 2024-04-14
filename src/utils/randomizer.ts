@@ -12,8 +12,8 @@ export interface MapData {
  * Randomly select a number from the number of maps
  * under map_data.json
  */
-export function random_select(): number {
-    const rng = seedrandom(Date.now().toString());
+export function random_select(seed: number = Date.now()): number {
+    const rng = seedrandom(seed.toString());
     return Math.floor(rng() * map_data.length);
 }
 

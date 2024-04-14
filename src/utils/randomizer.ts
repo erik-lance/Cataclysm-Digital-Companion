@@ -114,6 +114,12 @@ export function get_crates_with_powerups(map: MapData): MapData {
         crate_coords.splice(index, 1);
     }
 
+    // If no crates have powerups, then randomly select one crate to have a powerup
+    if (powerup_coords.length === 0 && crates > 0) {
+        let index = Math.floor(Math.random() * crate_coords.length);
+        powerup_coords.push(crate_coords[index]);
+    }
+
     // Mark the crates with powerups
     powerup_coords.forEach(coord => {
         map.tiles[coord[1]][coord[0]] = 9;

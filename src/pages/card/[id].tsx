@@ -35,7 +35,7 @@ export default function GameCard() {
             <Grid item container direction="row" columns={20} justifyContent="center" alignItems="center">
                 <Grid item lg={2} md={1} sm={1} xs={1}> {/* Spacing */} </Grid>
 
-                <Grid item lg={8} md={10} sm={10} xs={10} container spacing={6}>
+                <Grid item lg={8} md={10} sm={10} xs={10} container spacing={3}>
                     <Grid item xs={12} sm={6} container justifyContent="center">
                         <Card sx={{ bgcolor: 'rgba(0, 0, 0, 0)' }}>
                             <CardMedia

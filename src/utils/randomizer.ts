@@ -1,7 +1,7 @@
 import map_data from '../data/map_data.json';
 import seedrandom from 'seedrandom';
 
-export const player_coords = [[7,0], [0,1], [1,8], [8,7]];
+export const player_coords = [[1,0], [8,1], [0,7], [7,8]];
 export interface MapData {
     id: number;
     name: string;

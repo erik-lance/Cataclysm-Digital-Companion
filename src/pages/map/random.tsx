@@ -151,15 +151,15 @@ export default function Map() {
                                 <Stack spacing={2}>
                                     <Stack direction="row" spacing={1} alignItems="center">
                                         <Avatar src="/tiles/crate.png" variant="square" />
-                                        <Typography variant="h6">x{numObstacles} Obstacles</Typography>
+                                        <Typography variant="h6">x{numObstacles} Destructibles</Typography>
                                     </Stack>
                                     <Stack direction="row" spacing={1} alignItems="center">
                                         <Avatar src="/tiles/wall.png" variant="square" />
-                                        <Typography variant="h6">x{numWalls} Walls</Typography>
+                                        <Typography variant="h6">x{numWalls} Indestructibles</Typography>
                                     </Stack>
                                     <Stack direction="row" spacing={1} alignItems="center">
                                         <Avatar src="/tiles/powerup.png" variant="square" />
-                                        <Typography variant="h6">x{numPowerups} Obstacles with Powerups</Typography>
+                                        <Typography variant="h6">x{numPowerups} Destructibles with Powerups</Typography>
                                     </Stack>
                                 </Stack>
                             </Grid>

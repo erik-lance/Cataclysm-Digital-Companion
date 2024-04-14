@@ -138,6 +138,13 @@ export default function Map() {
                                         >
                                         Begin
                                     </Button>
+
+                                    <IconButton
+                                        color="info"
+                                        href='/map/random'
+                                    >
+                                        <Refresh />
+                                    </IconButton>
                                 </Stack>
                                     
                             </Grid>
@@ -209,7 +216,6 @@ export default function Map() {
                             <Grid item>
                                 <IconButton
                                     color="info"
-                                    
                                     href='/map/random'
                                 >
                                     <Refresh />

@@ -31,12 +31,12 @@ export default function Maps() {
             </Grid>
 
             <Grid item container direction="row"
-                columns={20} justifyContent="center" alignItems="center"
+                columns={20} justifyContent="center"
             >
                 <Grid item lg={4} md={3} sm={1} xs={1}> {/* Spacing */} </Grid>
 
                 <Grid item lg={6} md={6} sm={10} xs={10} 
-                    container columns={12} spacing={2}
+                    container columns={12} spacing={2} justifyContent="start" alignItems="flex-start"
                 >
                     {map_data.map((map, index) => (
                         <Grid item xs={6} sm={6} md={6} key={index}>
@@ -53,11 +53,20 @@ export default function Maps() {
                     {/* One is for randomized objects */}
                     {/* One is for random select */}
 
-                    
-
                     <Grid item xs={6} sm={6} md={6} key={map_data.length}>
                         <MapCard
                             id={map_data.length}
+                            name={"Coming Soon!"}
+                            description={"Coming Soon!"}
+                            href="/maps"
+                            color="grey"
+                            disabled={true}
+                        />
+                    </Grid>
+
+                    <Grid item xs={12} sm={6} md={6} key={map_data.length + 1}>
+                        <MapCard
+                            id={map_data.length + 1}
                             name={"Randomized Objects"}
                             description={"Click to view randomized objects"}
                             href="/map/random"
@@ -65,9 +74,9 @@ export default function Maps() {
                         />
                     </Grid>
 
-                    <Grid item xs={6} sm={6} md={6} key={map_data.length + 1}>
+                    <Grid item xs={12} sm={6} md={6} key={map_data.length + 2}>
                         <MapCard
-                            id={map_data.length + 1}
+                            id={map_data.length + 2}
                             name={"Random Select"}
                             description={"Click to view random select"}
                             href={`/map/${randomMapId}`}

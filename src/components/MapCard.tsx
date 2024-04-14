@@ -6,9 +6,10 @@ interface MapCardProps {
     description: string;
     href: string;
     color?: string
+    disabled?: boolean
 }
 
-export default function MapCard( { id, name, description, href, color }: MapCardProps ) {
+export default function MapCard( { id, name, description, href, color, disabled=false }: MapCardProps ) {
     if (color === undefined) {
         color = "background.paper"
     }
@@ -18,10 +19,13 @@ export default function MapCard( { id, name, description, href, color }: MapCard
         >
             <CardActionArea
                 href={href}
+                disabled={disabled}
             >
                 <CardContent>
-                    <Typography gutterBottom
-                        sx={{ typography: { sm: 'h6', md: 'h5' } }}
+                    <Typography gutterBottom display="inline" noWrap
+                        sx={{ 
+                            typography: { sm: 'h6', md: 'h5' },
+                        }}
                     >
                         {name}
                     </Typography>

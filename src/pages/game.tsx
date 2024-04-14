@@ -33,7 +33,7 @@ export default function Game() {
   const [avatars, setAvatars] = useState<AvatarData[]>(initialAvatars);
   const [showDialog, setShowDialog] = useState<boolean>(false);
   const [nonZeroAvatarNames, setNonZeroAvatarNames] = useState<string[]>([]);
-  const [cycleCount, setCycleCount] = useState(0);
+  const [turnCount, setTurnCount] = useState(0);
   const [showModifiersPrompt, setShowModifiersPrompt] = useState<boolean>(true);
   const [showModifiers, setShowModifiers] = useState(false);
   const [getMaxLives, setMaxLives] = useState(9);
@@ -66,12 +66,12 @@ export default function Game() {
     return `${hours}:${minutes}:${seconds}`;
   };
 
-  const handleNextCycle = () => {
-    setCycleCount(prevCount => prevCount + 1);
+  const handleNextTurn = () => {
+    setTurnCount(prevCount => prevCount + 1);
   };
 
-  const handlePreviousCycle = () => {
-    setCycleCount(prevCount => Math.max(0, prevCount - 1));
+  const handlePreviousTurn = () => {
+    setTurnCount(prevCount => Math.max(0, prevCount - 1));
   };
 
   const handleSliderChange = (id: number, newValue: number) => {
@@ -170,19 +170,19 @@ export default function Game() {
     >
       <Grid item container direction="column" alignItems="center" spacing={2}> {/* Title, Counter, and Timer */}
         <Typography variant="h5" align="center" gutterBottom style={{ marginBottom: '30px' }}>
-          Timer: {formatTime(timer)}
+          Time: {formatTime(timer)}
         </Typography>
         <Typography variant="h5" align="center" gutterBottom style={{ marginBottom: '30px' }}>
-          Cycle Count: {cycleCount}
+          Turn Count: {turnCount}
         </Typography>
       </Grid>
 
       <Grid item container justifyContent="center" style={{ marginBottom: '20px' }}>
-        <Button variant="contained" color="primary" onClick={handlePreviousCycle} style={{ marginRight: '20px' }}>
-          Previous Cycle
+        <Button variant="contained" color="primary" onClick={handlePreviousTurn} style={{ marginRight: '20px' }}>
+          Previous Turn
         </Button>
-        <Button variant="contained" color="primary" onClick={handleNextCycle}>
-          Next Cycle
+        <Button variant="contained" color="primary" onClick={handleNextTurn}>
+          Next Turn
         </Button>
       </Grid>
 

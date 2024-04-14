@@ -2,8 +2,15 @@ import { Box, Button, Card, CardActionArea, CardContent, CardMedia, Container, G
 import map_data from '../data/map_data.json';
 import { random_select } from '../utils/randomizer';
 import MapCard from '@/components/MapCard';
+import { useEffect, useState } from 'react';
 
 export default function Maps() {
+    const [randomMapId, setRandomMapId] = useState<number>(0);
+    
+    useEffect(() => {
+        setRandomMapId(random_select());
+    }, []);
+
     return <>
         <Grid container
             direction="column"
@@ -63,7 +70,7 @@ export default function Maps() {
                             id={map_data.length + 1}
                             name={"Random Select"}
                             description={"Click to view random select"}
-                            href={`/map/${random_select()}`}
+                            href={`/map/${randomMapId}`}
                             color="green"
                         />
                     </Grid>

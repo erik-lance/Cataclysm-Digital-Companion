@@ -114,7 +114,7 @@
         "description": "Mark any tile on the board. At the end of Action 3 next turn, deal 3 dmg in a 2 tile radius from the marked tile to All players.",
         "type": "Action",
         "numCopies": 2,  
-        "detailed": ""
+        "detailed": "Place a bomb token on the desired tile. Can also place directly under a player, destructible, or indestructible. Players can walk over this tile."
     },
     {
         "id": 13,
@@ -138,7 +138,7 @@
         "id": 15,
         "name": "DISINTIGRATOR",
         "image": "Disintigrator.png",
-        "description": "Target an entire roww or column beside you and deal 3 dmg to all enemies there.",
+        "description": "Target an entire row or column beside you and deal 3 dmg to all enemies there.",
         "type": "Action",
         "numCopies": 2,  
         "detailed": ""
@@ -186,7 +186,7 @@
         "description": "Dodge all targeted cards during this action order only.",
         "type": "Action",
         "numCopies": 6,  
-        "detailed": "Dodge all targeted cards during this action order only. Damage is finalized at the end of turn. So if you revealed this card before you get attacked or after you get attacked on the same action cycle, its the same result = you were able to successfully dodge it. Timing is everything."
+        "detailed": "Dodge all targeted cards during this action order only. Damage is finalized at the end of turn. So if you revealed this card before you get attacked or after you get attacked on the same action cycle, its the same result = you were able to successfully dodge it. Timing is everything. Can dodge Cataclysm and Catomic Bomb."
     },
     {
         "id": 21,
@@ -240,7 +240,7 @@
         "description": "If you received dmg from an attack played this turn, deal that amount to the ones who played them.",
         "type": "Action",
         "numCopies": 4,  
-        "detailed": "If you received dmg from an attack played this turn, deal that amount to the ones who played them. This card does not prevent damage. Whatever amount of damage the player received is the amount of damage returned to whoever attacked them with."
+        "detailed": "If you received dmg from an attack played this turn, deal that amount to the ones who played them. This card does not prevent damage. Whatever amount of damage the player received is the amount of damage returned to whoever attacked them with. Works on Cataclysm and Catomic Bomb."
     },
     {
         "id": 27,
